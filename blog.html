@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oMno's Blog</title>
+
+    <link rel="stylesheet" href="blog-styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">  
+ 
+</head>
+<body>
+    <header>
+        <div class="content">
+            <a href="index.html" class="desktop logo">oMnotopia</a>
+            <nav class="desktop">
+                <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a></li>
+                </ul>
+            </nav>   
+        </div>
+    </header>
+    <main>
+        <div class="blog-container">
+            <article class="blog-item hoisting">
+                <div class="blog-item-container">
+                    <h2>Hoisting</h2>
+                    <p>
+                        Hoisting is Javascripts default behaviour, it means that all declarations are moved to the top of
+                        the current scope(current script or function). As you will see below hoisting is generally not a 
+                        good thing and can result in an error or unexpected outputs. The simplest way to avoid those 
+                        situations is to declare your varables and functions at the top of your javascript programs before 
+                        any statements that require or manipulate the information contained within them.
+                    </p>
+                    <p>
+                        Variables that are defined with <i>let</i> <i>const</i>, or <i>var</i> are hoisted to the top of the scope 
+                        but not initialized. This means that the variable exists in the code but cannot be used until it is 
+                        declared. <i>Let</i> differs from <i>const</i> in that if you try to use a <i>let</i> before it is declared 
+                        you will get a <i style="color:red">ReferenceError</i>, whereas if <i>const</i> is used before it is 
+                        declared you will get a syntax error and the code will not run.
+                    </p>
+                    <figure class="blog-image small">
+                        <img src="./resources/blog-hoisting-resources/let-reference_error.PNG" alt="Example of a let reference error">
+                        <figcaption>Example of let being used before it is declared, results in a reference error.</figcaption>
+                    </figure>
+                    <figure class="blog-image small">
+                        <img src="./resources/blog-hoisting-resources/const-syntax_error.PNG" alt="Example of a const syntax error">
+                        <figcaption>Example of const being used before it is declared, results in a syntax error.</figcaption>
+                    </figure>
+                    <p>
+                        An example of where hoisting can prevent your code from getting an error is shown below. In this example
+                        the variable is initialized at the top of the code but declared at the bottom. 
+                        JavaScript hoists the declaration of the variable above the <i>console.log</i> statement. If the 
+                        variable was not hoisted an error would be generated. This is an example though and generally not 
+                        best practice as declaring and initializing variables at the top of their scope allows for easier 
+                        readability of code.
+                    </p>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-hoisting-resources/benefit.PNG" alt="Example of hoisting preventing errors">
+                            <figcaption>Example of const being used before it is declared, results in a syntax error.</figcaption>
+                        </figure>
+                    <p>
+                        Another thing to know about how let and const hoisting is that only the declaration of a 
+                        variable will be hoisted. If you have an initialization attached the the declaration, the 
+                        initialization will not be hoisted and you may run into situations where an error is compiled, or something else.
+                        In the two images below, the code is syntactically the same. Both will result in a console log
+                        of "undefined". 
+                    </p>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-hoisting-resources/initialization_error-Part1.PNG" alt="Initialization example resulting in error">
+                        <figcaption>This code is the same as below and results in a console log of "undefined".</figcaption>
+                    </figure>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-hoisting-resources/initialization_error-Part2.PNG" alt="Initialization example resulting in error">
+                        <figcaption>This code is the same as above and results in a console log of "undefined".</figcaption>
+                    </figure>
+                    <p>
+                        The top image of the two above is a good example of hoisting because we would expect to get a 
+                        <i style="color:red">ReferenceError</i> since the console is trying to log a variable that 
+                        has not yet been declared. The reason we instead get a log of <i>undefined</i> is that the 
+                        variable <i>"greatestHockeyPlayer"</i> is hoisted to the top of the program. This is what is being 
+                        shown in the bottom image, and writing the code this way produces the same result.
+                    </p>
+                    <h3>Hoisting & Functions</h3>
+                    <p>
+                        Hoisting effects more than just variables it also effects functions. In JavaScript all named 
+                        functions are hoisted in the same way that variables are. That means if you declare a named 
+                        function after you call it, the function will still run as expected because the declaration is 
+                        hoisted to the top of its scope. This is shown below.
+                    </p>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-hoisting-resources/named_functions.PNG" alt="Hoisting of a named function">
+                        <figcaption>Hoisting of a named function.</figcaption>
+                    </figure>
+                    <p>
+                        If you want your functions to not be hoisted we simply need to make them anonymous and assign 
+                        them to a variable. The variable that is assigned to the anonymous function will be hoisted, 
+                        but the initialization of the variable into a function is not hoisted. This is shown below.
+                    </p>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-hoisting-resources/unnamed_functions.PNG" alt="Unnamed functions are not hoisted">
+                        <figcaption>Unnamed functions are not hoisted.</figcaption>
+                    </figure>
+                </div>    
+            </article>
+
+            <article class="blog-item">
+                <div class="blog-item-container">
+                    <h2>Defer, Async, and Paser-Blocking JavaScript</h2>
+                    <p>
+                        The attributes <b>"Defer"</b> and <b>"Async"</b> belong to the <i>&lt;script&gt;</i> element. The use of 
+                        the attributes changes the way the DOM behaves when loading its contents. The default behaviour 
+                        of JavaScript is <b>"Parser-Blocking"</b>, which happens when a browser hits a <i>&lt;script&gt;</i> tag. 
+                        The construction of the DOM is paused until the JavaScript runtime has taken control and allowed 
+                        the script to execute. Javascript parser-blocking differs from how HTML is parsed which allows for 
+                        images and other elements to be loaded while the rest of the content continues to parse. So when a
+                        an HTML site encounters the <i>&lt;script&gt;</i> tag it will normally pause, download the JS, and 
+                        execute the JS. How this normally happens can be seen in the image below.
+                    </p>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-defer_async_parser-resources/block-parser.PNG" alt="Normal DOM loading">
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        When async is included in a script tag, like so <i>&lt;script src="" async&gt;</i>, it causes the default
+                        behaviour of parser-blocking to be disabled and downloads the JS asynchronously to the HTML parsing. 
+                        Like the default behaviour, when async finishes downloading the JS it causes the HTML parsing to pause 
+                        while the script is executed. Once the script is executed any remaining HTML is parsed. One caveat
+                        to using async is that it will execute the JS files in whatever order they finish downloading. This 
+                        can be a bad thing if you some of your scripts have dependancies, as it may cause the dependants 
+                        to load before the files they depend on. The image below shows the how the JS is downloaded 
+                        alongside the HTML being parsed.
+                    </p>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-defer_async_parser-resources/async.PNG" alt="How async effects DOM loading">
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        When defer is included in a script tag, like so <i>&lt;script src="" defer&gt;</i>, its boolean value is
+                        set, indicating to a browser that the script meant to be executed after the document has been 
+                        fully parsed, but also before the DOMContentLoaded attribute has fired. Defer causes the entire
+                        HTML file to be parsed and JS scripts to be downloaded before it executes the JS files. This 
+                        means that the HTML parsing does not need to pause, and potentially be delayed due to large JS 
+                        files. Using defer also means that all JS files will be executed in the order that they are 
+                        added into the HTML code, so if you have files with dependancies simply place those files after 
+                        the ones providing code. The image below shows how HTML is fully parsed and JS files downloaded 
+                        before they are executed.
+                    </p>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-defer_async_parser-resources/defer.PNG" alt="How defer effects DOM loading">
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        *Note: There is no need to use the defer attribute when loading scripts associated with modules, 
+                        this is because modules are deferred automatically. Also, <b>defer</b> and <b>async</b> only have
+                        an effect on external scripts, so are only to be used when an src attribute is present.
+                    </p>
+                </div>    
+            </article >
+
+            <article class="blog-item bubbling">
+                <div class="blog-item-container">
+                    <h2>Bubbling & Capturing</h2>
+                    <p>
+                        Bubbling or Event Bubbling is when multiple events are triggered with methods like, <i>"onclick()"</i> or
+                        <i>"addEventListener()"</i>, with a single action. A simple example is when a user clicks a 
+                        single time on an element with an event listener that has another element behind or in front 
+                        of it that also has an event listener. This can best be understood in terms of how the "Document 
+                        Object Model" (DOM) is layed out and how each element fits into the model.
+                    </p>
+                    <figure class="blog-image">
+                        <img src="./resources/blog-bubbling_capturing-resources/example-bubbling.png" alt="Bubbling in the DOM">
+                        <figcaption>Bubbling and its path through the DOM</figcaption>
+                    </figure>
+                </div>    
+
+
+            </article>
+
+            <article class="blog-item">
+                <h2>Scope(block/funciton)</h2>
+            </article >
+            <article class="blog-item">
+                <h2>REST APIs</h2>
+            </article>
+            <article class="blog-item">
+                <h2>Closures</h2>
+            </article>
+            <article class="blog-item">
+                <h2>Currying</h2>
+            </article>
+            <article class="blog-item">
+                <h2>Callback Functions/Promises/Async-Await</h2>
+            </article>
+            <article class="blog-item">
+                <h2>Nullish coalescing</h2>
+            </article>
+            <article class="blog-item">
+                <h2>Responsive Websites</h2>
+            </article>
+        </div>    
+    </main>
+</body>
+</html>

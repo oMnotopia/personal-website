@@ -1,0 +1,126 @@
+/* Universal Styles */
+
+html {
+    font-family: 'PT Sans';
+    font-size: 16px;
+    background-color: #578CA9;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+  
+.center {
+    text-align: center;
+}
+  
+.button {
+    border-radius: 4px;
+    background-color: #4a4a4a;
+    color: white;
+}
+
+
+/* Header Styles */
+
+
+.content a {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+header {
+    width: 100%;
+    border-bottom: solid 1px #c6c1c1;
+    background-color: white;
+}
+  
+header .content {
+    display: flex;
+    align-items: center;
+    padding: 1.875rem;
+}
+  
+header .logo {
+    flex: 1;
+}
+  
+header nav ul {
+    display: flex;
+}
+  
+nav li {
+    padding-left: 3.5rem;
+    list-style-type: none;
+}
+
+nav a {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+
+header .icon {
+
+    width: 3rem;
+}
+
+header .mobile {
+    display: none;  
+}
+
+
+/* Body Styles */
+
+main h2 {
+    padding-top: 1rem;
+}
+
+.blog-container {
+    width: 75%;
+    margin: auto;
+}
+
+.blog-item {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding-bottom: 5%;
+}
+
+.blog-item-container {
+    width: 85%;
+    margin: auto;
+}
+
+.blog-item p {
+    padding: 0 1rem;
+    font-size: 1.125rem;
+    text-align: start;
+}
+
+.blog-item h2 , .blog-item h3{
+    text-align: center;
+}
+
+.blog-image {
+    text-align: center;
+    padding: 1rem;
+}
+
+.blog-image img {
+    width: 100%;
+}
+
+
+/* Hoisting */
+
+.hoisting .small {
+    width: 60%;
+    margin: auto;
+}
+
+/* Bubbling & Capturing */
+
+
+
