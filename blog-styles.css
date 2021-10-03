@@ -4,7 +4,6 @@ html {
     font-family: 'PT Sans';
     font-size: 16px;
     background-color: #578CA9;
-    text-align: center;
 }
 
 body {
@@ -74,18 +73,20 @@ header .mobile {
 /* Body Styles */
 
 main h2 {
-    padding-top: 1rem;
+    padding: 1rem 0;
 }
 
-.blog-container {
+#blog-container {
     width: 75%;
-    margin: auto;
+    margin: 2rem auto;
 }
 
 .blog-item {
     background-color: #FFF;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     padding-bottom: 5%;
+    overflow: hidden;
+    margin: 2rem;
 }
 
 .blog-item-container {
@@ -94,7 +95,7 @@ main h2 {
 }
 
 .blog-item p {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     font-size: 1.125rem;
     text-align: start;
 }
@@ -110,17 +111,37 @@ main h2 {
 
 .blog-image img {
     width: 100%;
+    background-size: cover;
+    height: 10rem;
+}
+
+.item-container {
+    width: 75%;
+    margin: auto;
 }
 
 
 /* Hoisting */
+#hoisting {
 
-.hoisting .small {
+    transition: max-height 1.0s ease-out;
+}
+
+
+#hoisting .small {
     width: 60%;
     margin: auto;
 }
 
-/* Bubbling & Capturing */
+
+/* Collapsable Content */
+/* Style the button that is used to open and close the collapsible content */
+
+
+.collapsible:hover {
+    background-color: #ccc;
+    cursor: pointer;
+  }
 
 
 

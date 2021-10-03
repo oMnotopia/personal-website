@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="blog-styles.css">
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">  
- 
+    
+    <script src="script.js" type="text/javascript" defer></script>
 </head>
 <body>
     <header>
@@ -25,9 +26,9 @@
         </div>
     </header>
     <main>
-        <div class="blog-container">
-            <article class="blog-item hoisting">
-                <div class="blog-item-container">
+        <div id="blog-container">
+            <article id="hoisting" class="blog-item collapsible" onclick='enlargeBlogItem(this)' attr-small='48px' style='height:48px;'>
+                <div class="item-container">
                     <h2>Hoisting</h2>
                     <p>
                         Hoisting is Javascripts default behaviour, it means that all declarations are moved to the top of
@@ -105,11 +106,11 @@
                         <img src="./resources/blog-hoisting-resources/unnamed_functions.PNG" alt="Unnamed functions are not hoisted">
                         <figcaption>Unnamed functions are not hoisted.</figcaption>
                     </figure>
-                </div>    
+                </div>
             </article>
 
-            <article class="blog-item">
-                <div class="blog-item-container">
+            <article id="Defer-Async" class="blog-item collapsible" onclick='enlargeBlogItem(this)' attr-small='48px' style='height:48px;' >
+                <div class="item-container">
                     <h2>Defer, Async, and Paser-Blocking JavaScript</h2>
                     <p>
                         The attributes <b>"Defer"</b> and <b>"Async"</b> belong to the <i>&lt;script&gt;</i> element. The use of 
@@ -159,31 +160,32 @@
                         this is because modules are deferred automatically. Also, <b>defer</b> and <b>async</b> only have
                         an effect on external scripts, so are only to be used when an src attribute is present.
                     </p>
-                </div>    
+                </div>
             </article >
 
-            <article class="blog-item bubbling">
-                <div class="blog-item-container">
-                    <h2>Bubbling & Capturing</h2>
+            <article id="bubbling" class="blog-item collapsible" onclick='enlargeBlogItem(this)' attr-small='48px' style='height:48px;'>
+                <div class="item-container" >
+                    <h2>Bubbling & Capture</h2>
                     <p>
                         Bubbling or Event Bubbling is when multiple events are triggered with methods like, <i>"onclick()"</i> or
                         <i>"addEventListener()"</i>, with a single action. A simple example is when a user clicks a 
-                        single time on an element with an event listener that has another element behind or in front 
-                        of it that also has an event listener. This can best be understood in terms of how the "Document 
+                        once on an element with an event listener, with a handler of click, that has a parent element behind 
+                        it that also has an event listener. This can best be understood in terms of how the "Document 
                         Object Model" (DOM) is layed out and how each element fits into the model.
                     </p>
-                    <figure class="blog-image">
+                    <figure class="blog-image large">
                         <img src="./resources/blog-bubbling_capturing-resources/example-bubbling.png" alt="Bubbling in the DOM">
                         <figcaption>Bubbling and its path through the DOM</figcaption>
                     </figure>
-                </div>    
-
-
+                </div>
             </article>
 
-            <article class="blog-item">
-                <h2>Scope(block/funciton)</h2>
+            <article id="scope" class="blog-item collapsible" attr-small='48px' style='height:48px;' >
+                <div class="item-container">
+                    <h2>Scop(Block/Function)</h2>
+                </div>
             </article >
+
             <article class="blog-item">
                 <h2>REST APIs</h2>
             </article>
@@ -201,6 +203,9 @@
             </article>
             <article class="blog-item">
                 <h2>Responsive Websites</h2>
+            </article>
+            <article class="blog-item">
+                <h2>Accessabillity "a11y"</h2>
             </article>
         </div>    
     </main>
