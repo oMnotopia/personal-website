@@ -27,7 +27,7 @@
     </header>
     <main>
         <div id="blog-container">
-            <article id="hoisting" class="blog-item collapsible" onclick='enlargeBlogItem(this)' attr-small='48px' style='height:48px;'>
+            <article id="hoisting" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
                 <div class="item-container">
                     <h2>Hoisting</h2>
                     <p>
@@ -109,7 +109,7 @@
                 </div>
             </article>
 
-            <article id="Defer-Async" class="blog-item collapsible" onclick='enlargeBlogItem(this)' attr-small='48px' style='height:48px;' >
+            <article id="Defer-Async" class="blog-item collapsible"  attr-small='48px' style='height:48px;' >
                 <div class="item-container">
                     <h2>Defer, Async, and Paser-Blocking JavaScript</h2>
                     <p>
@@ -163,7 +163,7 @@
                 </div>
             </article >
 
-            <article id="bubbling" class="blog-item collapsible" onclick='enlargeBlogItem(this)' attr-small='48px' style='height:48px;'>
+            <article id="bubbling" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
                 <div class="item-container" >
                     <h2>Bubbling & Capture</h2>
                     <p>
@@ -177,6 +177,16 @@
                         <img src="./resources/blog-bubbling_capturing-resources/example-bubbling.png" alt="Bubbling in the DOM">
                         <figcaption>Bubbling and its path through the DOM</figcaption>
                     </figure>
+                    <p>
+                        The image above shows two events that that are being triggered on a grandparent element(div class="project-item") 
+                        and then its grandchild element(a). Both elements need to be triggered by the same <i>event</i>, in our case it 
+                        could be a "click". When the anchor element(&lt;a&gt;) is clicked the event listener on the anchor will trigger, 
+                        but it will also trigger the grandparent element, "project-item". This is what bubbling is, think of it as when
+                        a bubble forms below the surface, it rises up through the water until it reaches the top. In this case our bubble 
+                        just happens to be triggering all the even listeners on elements above what was clicked. An important detail  to 
+                        understand is that if bubbling is set and the div "project-item" is clicked it won't trigger the anchor elements 
+                        event listener.
+                    </p>
                 </div>
             </article>
 
