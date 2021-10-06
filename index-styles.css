@@ -28,7 +28,6 @@ body {
 }
 
 header {
-
     width: 100%;
     border-bottom: solid 1px #c6c1c1;
     background-color: white;
@@ -74,8 +73,9 @@ header .mobile {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin:1rem;
+    margin: auto;
     gap: 3rem;
+    width: 60%;
 }
 
 .project-item {
@@ -92,5 +92,9 @@ header .mobile {
 }
 
 .project-item .image-container {
-    height: 15rem;
+    height: 10rem;
+}
+
+.project-container {
+    margin-top: 2rem;
 }
