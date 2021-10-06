@@ -109,7 +109,7 @@
                 </div>
             </article>
 
-            <article id="Defer-Async" class="blog-item collapsible"  attr-small='48px' style='height:48px;' >
+            <article id="Defer-Async" class="blog-item collapsible"  attr-small='48px' style='height:48px;'>
                 <div class="item-container">
                     <h2>Defer, Async, and Paser-Blocking JavaScript</h2>
                     <p>
@@ -190,14 +190,58 @@
                 </div>
             </article>
 
-            <article id="scope" class="blog-item collapsible" attr-small='48px' style='height:48px;' >
+            <article id="scope" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
                 <div class="item-container">
-                    <h2>Scop(Block/Function)</h2>
+                    <h2>Scope(Block/Function)</h2>
                 </div>
             </article >
 
-            <article class="blog-item">
-                <h2>REST APIs</h2>
+            <article id="restAPI" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
+                <div class="item-container">
+                    <h2>REST APIs</h2>
+                    <p>
+                        A <b>RE</b>presentational <b>S</b>tate <b>T</b>ransfer(REST) <b>A</b>pplication 
+                        <b>P</b>rogramming <b>I</b>nterface (API), is an API that conforms to a software architectural 
+                        style. This architectural style defines a set of constraints not standards and protocols 
+                        like an API. In other words APIs can follow <i>REST</i>ful constraints, or not. If they 
+                        do then they are able to access web resources that also use those constraints. 
+                        If they dont follow the <i>REST</i>ful constraints then they are unable to access web 
+                        resources using those constraints.
+                    </p>
+                    <p>
+                        In order for an API to be considered <i>REST</i>ful, it must conform to six main 
+                        constraints:
+                        <ul>
+                            <li>Client-Server Architechture</li>
+                            <li>Statelessness</li>
+                            <li>cacheability</li>
+                            <li>Layered System</li>
+                            <li>Code on Demand (optional)</li>
+                            <li>Uniform Interface</li>
+                        </ul>
+                    </p>
+                    <p><b>Client-Server Architechture</b> is necessary for seperation of concerns, which in our 
+                    case is the seperation of frontend and backend concerns. Seperation allows for seperate 
+                    sections of code to operate independantly of other sections, allowing for greater portability, 
+                    simplification, scalability, and most importantly independant evolution of components.
+                    </p> 
+                    <p><b>Statelessness</b>, meaning that no client information is stored between requests, and 
+                        each request is seperate and unconnected. This allows for increased performance in high 
+                        volume applications, by removing server load caused by holding of session information.
+                    </p> 
+                    <p><b>Cacheability</b>, meaning responses must implicitly or explicitly define themselves as 
+                        cacheable in order to prevent clients from providing inapropirate data in response to 
+                        further requests. When caching is done appropriately it can reduce or eliminate some 
+                        client-server interactions, which improves scalability and performance.
+                    </p> 
+                    <p><b>Layered System</b>
+                    </p> 
+                    <p><b>Code on Demand</b>
+                    </p>
+                    <p><b>Uniform Interface</b>
+                    </p>  
+              
+                </div>
             </article>
             <article class="blog-item">
                 <h2>Closures</h2>

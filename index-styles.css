@@ -73,6 +73,9 @@ header .mobile {
 
 /* Body Styles */
 
+
+
+/* Body Styles - Projects */
 #projects {
     display: flex;
     flex-wrap: wrap;
@@ -86,6 +89,7 @@ header .mobile {
     width: 33%;
     border: 1px solid #000;
     border-radius: 1rem;
+    background-color: #FFF;
 }
 
 .project-item img {
@@ -100,5 +104,5 @@ header .mobile {
 }
 
 .project-container {
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
