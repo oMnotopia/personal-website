@@ -4,11 +4,14 @@ html {
     font-family: 'PT Sans';
     font-size: 16px;
     background-color: #578CA9;
-    text-align: center;
 }
 
 body {
     margin: 0;
+}
+
+main {
+    text-align: center;
 }
   
 .center {
