@@ -1,3 +1,9 @@
+.game-header {
+    color: #FFF;
+    margin: 0;
+
+}
+
 .title-row {
     margin-top: 2.635rem;
     margin-bottom: 1.3125rem;
@@ -78,6 +84,6 @@
 }
 
 .game-container {
-    margin: 2rem 0;
+
     border-bottom: 1px solid #999;
 }

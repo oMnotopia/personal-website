@@ -12,6 +12,7 @@ body {
 
 main {
     text-align: center;
+    width: 100%;
 }
   
 .center {
@@ -105,4 +106,41 @@ header .mobile {
 
 .project-container {
     margin: 2rem 0;
+}
+
+#twitter-widget-0 {
+    width: 10%;
+    height: 10rem;
+}
+
+.c1 {
+    height: 5rem;
+    width: 5rem;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.6;
+    transform: translate(1.5rem, 1.5rem);
+}
+.c2 {
+    height: 5rem;
+    width: 5rem;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.6;
+    transform: translate(3rem, 0);
+}
+.c3 {
+    height: 5rem;
+    width: 5rem;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.6;
+}
+
+#circle-container {
+    width: 100%;
+    height: 100%;
 }
