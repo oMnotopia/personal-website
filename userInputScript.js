@@ -15,6 +15,8 @@ const closedDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/r
 //Vars for javascript interactivity
 let numClosedDoors = 0;
 let numberOfRobots = 1;
+let maxNumOfDoors = 8;
+let minNumOfDoors = 2;
 let userInputOfDoors;
 let storedUserInputofDoors; 
 let currentlyPlaying = false;
@@ -126,8 +128,8 @@ function howManyDoors(ev) {
     userInputOfDoors = parseInt(userInputOfDoors, 10)
 
     //If user enters a value less than two, raise to two, or more than ten, lower to then.
-    if(userInputOfDoors<2) userInputOfDoors=2;
-    if(userInputOfDoors>10) userInputOfDoors=10;
+    if(userInputOfDoors<minNumOfDoors) userInputOfDoors=minNumOfDoors;//Min & Max defined in global vars
+    if(userInputOfDoors>maxNumOfDoors) userInputOfDoors=maxNumOfDoors;
 
     //Stores user input in a function for next round
     storedUserInput(userInputOfDoors)
