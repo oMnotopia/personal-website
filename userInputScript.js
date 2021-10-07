@@ -13,15 +13,16 @@ const spaceDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/re
 const closedDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/resources/closed_door.png"
 
 //Vars for javascript interactivity
-let numClosedDoors = 0;
+let numClosedDoors = 0; //starts with a blank setup, no doors
 let numberOfRobots = 1;
-let maxNumOfDoors = 8;
-let minNumOfDoors = 2;
+let maxNumOfDoors = 8; //max number of doors a user can have on screen, works up to large numbers
+let minNumOfDoors = 2; //minimum number of doors
 let userInputOfDoors;
 let storedUserInputofDoors; 
 let currentlyPlaying = false;
 let currentWinCounter = 0;
 let bestWinCounter = 0;
+let regex = /(?<!.)[0-9](?!.)/;//no character can come before a digit 0-9 or afterwards
 
 //Functions
 //Checks to see if the user has opened a door with the robot.
@@ -119,8 +120,13 @@ const gameOver = status => {
 function howManyDoors(ev) {
     ev.preventDefault();//stops the form submitting
     
-    //Sets variables for parent node and door nodes.
+    //Value input from user
     userInputOfDoors = document.getElementById('numOfDoors').value
+    //Compares user input to regex set in global variables, if not equal to the regex then user has 
+    //entered something that is not a number between 0-9, and function exits.
+    if(!regex.test(userInputOfDoors)) return; 
+
+    //Sets variable for how many doors there currently are based off existing child nodes of a parent node.
     let childOfDoors = doorParentID.childNodes;
 
     //Needs to be converted from str to num in order for addition below.
