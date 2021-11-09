@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">  
     
     <script src="script.js" type="text/javascript" defer></script>
+    <script src="searchbar.js" type="text/javascript" defer></script>
 </head>
 <body>
     <header>
@@ -26,14 +26,18 @@
         </div>
     </header>
     <main>
+        <div id="search-container">
+            <input type="text" id="searchInput" placeholder="Search topics...">
+        </div>
         <div id="blog-container">
-            <article id="hoisting" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
+            <article id="hoisting" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                 <div class="item-container">
                     <h2>Hoisting</h2>
                     <p>
                         Hoisting is Javascripts default behaviour, it means that all declarations are moved to the top of
-                        the current scope(current script or function). As you will see below hoisting is generally not a 
-                        good thing and can result in an error or unexpected outputs. The simplest way to avoid those 
+                        the current scope(current script or function). In some situations hoisting can be useful, but you will 
+                        see in examles below that most of the time hoisting is not 
+                        good and can result in errors or unexpected outputs. The simplest way to avoid those 
                         situations is to declare your varables and functions at the top of your javascript programs before 
                         any statements that require or manipulate the information contained within them.
                     </p>
@@ -109,7 +113,7 @@
                 </div>
             </article>
 
-            <article id="Defer-Async" class="blog-item collapsible"  attr-small='48px' style='height:48px;'>
+            <article id="Defer-Async" class="blog-item collapsible"  attr-small='96px' style='height:96px;'>
                 <div class="item-container">
                     <h2>Defer, Async, and Paser-Blocking JavaScript</h2>
                     <p>
@@ -163,7 +167,7 @@
                 </div>
             </article >
 
-            <article id="bubbling" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
+            <article id="bubbling" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                 <div class="item-container" >
                     <h2>Bubbling & Capture</h2>
                     <p>
@@ -190,13 +194,38 @@
                 </div>
             </article>
 
-            <article id="scope" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
+            <article id="scope" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                 <div class="item-container">
                     <h2>Scope(Block/Function)</h2>
+                    <p>Scope can be defined in a few ways in Javascript:</p>
+                    <ul>
+                        <li>Global</li>
+                        <li>Function</li>
+                        <li>Block</li>
+                    </ul>
+                    
+                    <p>
+                        Global scope, is when a variable can be accessed from anywhere else in the program. This means it can be 
+                        accessed by calls from inside any function or block. Function scope is applied to variables set inside a 
+                        function, very complex stuff. If a variable is set inside of a function a call from the global scope wants 
+                        access to it, it won't be able to. This is because scope only passes down, and in Javascript, scope goes 
+                        from global-->function-->block. Finally block scope applies to variables that are set in a block (anything 
+                        inside of a set of curly braces). Block scope also shows another difference between the old "var" and "let" 
+                        and "const". "Var" does not have block scope, but is applied to both "let" and "const". This just means 
+                        that a variable declared with var in a block can be called from outside that block whereas, variables 
+                        declared with let and const cannot be called from outside the block.
+                    </p>
+                    <p>
+                        When a variable is called that is inside a nested function Javascript will first look in its block scope, if no 
+                        value is found, it will then look in the function, or local, scope outside of the block. Again, if no value 
+                        is found then Javascript keeps looking at more and more outer scopes until it find the value or reaches the 
+                        global scope. In most cases if no value for the variable is found in the global scope then an error will be 
+                        returned.
+                    </p>
                 </div>
             </article >
 
-            <article id="restAPI" class="blog-item collapsible" attr-small='48px' style='height:48px;'>
+            <article id="restAPI" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                 <div class="item-container">
                     <h2>REST APIs</h2>
                     <p>
@@ -262,27 +291,88 @@
                     </p> 
                 </div>
             </article>
-            <article class="blog-item">
-                <h2>Closures</h2>
-                <h3>No work done</h3>
+            <article id="Closures" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                <div class="item-container">
+                    <h2>Closures</h2>
+                    <p>
+                        A closure is a function that will retain access to its parents scope even after the parent function 
+                        has closed. This is done by having a parent function return a child function. The eaxmple below 
+                        shows a simple case of a closure.
+                    </p>
+                    <pre>
+                        <code class="closure-exp">
+                            const parentFunction = () => {
+                                let num = 99;
+                                const childFunction = () => {
+                                    console.log(`The number of the greatest hockey player is ${num}`)
+                                }
+                                return childFunction
+                            }
+                            const resultOfParentFunction = parentFunction()
+                            console.log(resultOfParentFunction) 
+                            //() => {
+                            //    console.log(`The number of the greatest hockey player is ${num}`)
+                            //}
+                            resultOfParentFunction() //The number of the greatest hockey player is 99
+                        </code>
+                    </pre>
+                    <p>
+                        The above example first initializes parentFunction, and inside sets a variable "num". Then childFunction 
+                        is initialized and set as the return value of parent function. As a side note, notice how childFunction 
+                        is not returned as a call, childFunction(), but instead just the variable is returned. Next, the result 
+                        of calling parentFunction is stored in resultOfParentFunction, and that is logged. What will be shown in 
+                        console is shown below in comments. Next, resultOfParentFunction is called, and since its body contains 
+                        a console.log, "The number of the greatest hockey player is 99" is printed.
+                    </p>
+                    <p>
+                        The above example also shows a great way of achieving private variables as the only way to access the 
+                        variable num is through calling resultOfParentFunction.
+                    </p>
+                    <p>
+        
+                    </p>
+                    <p>Great References:</p>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=1S8SBDhA7HA">Dave Gray's Youtube Channel</a></li>
+                        <li><a href="https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4">Prashant Ram's Medium Article</a></li>
+                        
+                    </ul>
+                </div>    
             </article>
-            <article class="blog-item">
-                <h2>Currying</h2>
-                <h3>No work done</h3>
+            <article id="Currying" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                <div class="item-container">
+                    <h2>Currying</h2>
+                    <p>Curring is the action of making a function that normally accepts many parameters into one that only accepts 
+                        a single parameter at a time while still being able to use multiple parameters. The easiest way to see this 
+                        is through a mathematical expression:
+
+                            x = f(a, b, c) --> x =f(a)(b)(c)
+
+                        In programming terms this can be shown as :
+
+                            const curriedFunction = (a, b, c) => {...} --> const curriedFunction = a => b => c => {...}
+
+                            curriedFunction(a, b, c) --> curriedFunction(a)(b)(c)
+                        
+                        In the function definition, it shows that each time it is called it returns a new function that expects the 
+                        next argument inline. When curriedFunction(a) is called, the return value is a partially applied function. 
+
+                    </p>
+                </div>    
             </article>
-            <article class="blog-item">
+            <article id="Callback Function/Promises/Async-Await" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                 <h2>Callback Functions/Promises/Async-Await</h2>
                 <h3>No work done</h3>
             </article>
-            <article class="blog-item">
-                <h2>Nullish coalescing</h2>
+            <article id="Nullish Coalescing" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                <h2>Nullish Coalescing</h2>
                 <h3>No work done</h3>
             </article>
-            <article class="blog-item">
+            <article id="Responsive Websites" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                 <h2>Responsive Websites</h2>
                 <h3>No work done</h3>
             </article>
-            <article class="blog-item">
+            <article id="Accessabillity" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                 <h2>Accessabillity "a11y"</h2>
                 <h3>No work done</h3>
             </article>

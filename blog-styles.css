@@ -70,11 +70,6 @@ header .mobile {
 
 /* Body Styles */
 
-main h2 {
-    padding: 1rem 0;
-    margin: 1rem 0;
-}
-
 #blog-container {
     width: 75%;
     margin: 2rem auto;
@@ -83,7 +78,7 @@ main h2 {
 .blog-item {
     background-color: #FFF;
     border-radius: 0.625rem;
-    padding-bottom: 5%;
+    /*padding-bottom: 5%;*/
     overflow: hidden;
     margin: 2rem;
 }
@@ -119,10 +114,28 @@ main h2 {
     margin: auto;
 }
 
+.item-container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96px;
+    margin: 0;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+}
+
+#text {
+    justify-content: left;
+}
 
 /* Hoisting */
-#hoisting {
 
+#hoisting {
     transition: max-height 1.0s ease-out;
 }
 
@@ -132,15 +145,31 @@ main h2 {
     margin: auto;
 }
 
+/* Closure */
+
+.closure-exp {
+    text-align: start;
+    
+}
 
 /* Collapsable Content */
-/* Style the button that is used to open and close the collapsible content */
-
+/* Style the topics as they are hovered over */
 
 .collapsible:hover {
     background-color: #ccc;
     cursor: pointer;
   }
 
+/* Search Bar */
+/* Style the search bar */
 
+#search-container {
+    width:100%;
+    text-align: center;
+}
 
+#searchInput {
+    height: 1.5rem;
+    width: 25%;
+    margin: 0.75rem;
+}
