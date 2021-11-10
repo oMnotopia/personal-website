@@ -3,7 +3,7 @@
 html {
     font-family: 'PT Sans';
     font-size: 16px;
-    background-color: #578CA9;
+    background-color: #FFF;
 }
 
 body {
@@ -131,19 +131,28 @@ header .mobile {
 }
 
 .project-item { 
+    
     border-radius: 1rem;
-    background-color: #000;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .project-item:hover {
     opacity: 0.2;
 }
 
+.project-item.shadow {
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
 .item-container { 
     width: 90%;
     height: 100%;
     margin: auto;
-    padding: .625rem 0;
+    border-radius: 1rem;
+}
+
+.info-container {
+    border: 1px solid black;
     border-radius: 1rem;
 }
 
@@ -193,35 +202,85 @@ header .mobile {
     }
 }
 
-/* Twitter Styles */
+/* Theme Toggle Switch Styles */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-#twitter-widget-0 {
-    width: 10%;
-    height: 10rem;
+  /* The slider */
+  #slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    transition: .4s;
+  }
+
+  /* Generates square that slides */
+  #slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #578CA9;
+    transition: .4s;
+  }
+  
+  input:checked + #slider {
+    background-color: #FFF;
+  }
+  
+  input:focus + #slider {
+    box-shadow: 0 0 1px #000000;
+  }
+  
+  input:checked + #slider::before {
+    transform: translateX(26px);
 }
 
-.c1 {
-    background-color: red;
-    transform: translate(1.5rem, 1.5rem);
-}
-.c2 {
-    background-color: blue;
-    transform: translate(3rem, 0);
-}
-.c3 {
-    background-color: green;
+#theme.dark {
+    background-color: #000;
+    color: #FFF;
 }
 
-.c1, .c2, .c3 {
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    opacity: 0.6;
-    margin: 0;
-
+#theme.dark .instructions-text {
+    color: #FFF;
 }
 
-#circle-container {
-    width: 100%;
-    height: 100%;
+#theme.dark .game-header {
+    color:#578CA9;
+}
+
+#theme.dark.button {
+    border-radius: 4px;
+    background-color: #4a4a4a;
+    color: #FFF;
+}
+
+
+  /* Header Styles */
+
+#theme.dark header {
+    border-bottom: solid 1px #c6c1c1;
+    background-color: #1b1b1b; 
+}
+
+#theme.dark a { 
+    color: #FFF;
 }
