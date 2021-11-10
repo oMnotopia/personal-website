@@ -18,7 +18,7 @@
     <header>
         <div class="content">
             <a href="index.html" class="desktop logo">oMnotopia</a>
-            <nav class="desktop">
+            <nav>
                 <ul>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="#">About Me</a></li>
@@ -28,103 +28,122 @@
         </div>
     </header>
     <main>
-        <div id="circle-container">
-            <div class="circle c1"></div>
-            <div class="circle c2"></div>
-            <div class="circle c3"></div>
         
-            <div class="game-container">
-                <h1 class="game-header">Chore Door</h1>
-                <table class="instructions-row">
-                    <tr>
-                        <td class="instructions-number">1</td>
-                        <td class="instructions-text">Hiding behind one of these doors is the ChoreBot.</td>
-                    </tr>
-                    <tr>
-                        <td class="instructions-number">2</td>
-                        <td class="instructions-text">Your mission is to open all of the doors without running into the ChoreBot.</td>
-                    </tr>
-                    <tr>
-                        <td class="instructions-number">3</td>
-                        <td class="instructions-text">If you manage to avoid the ChoreBot until you open the very last door, you win!</td>
-                    </tr>
-                    <tr>
-                        <td class="instructions-number">4</td>
-                        <td class="instructions-text">Please enter a number between 2 and 8 to start the game.</td>
-                    </tr>
-                </table>
-            
-                <!--Doors will be added here through JavaScript-->
-                <div id="door-rows" class="door-row"></div>
-            
-                <div id="game-reqs">
-                    <div class="numOfDoorsInput">
-                        <form>
-                            <label for="numOfDoors">Number of Doors:</label>
-                            <input type="text" id="numOfDoors">
-                            <button id="btn" type="submit">Send</button>
-                        </form>
-                    </div>
-                    <div id="start" class="start-row">Good Luck!</div>
-                </div>    
-                <div id="score-tracker" class="score-row">
-                    <div class="current-streak">
-                        <p class="score-title">Current Streak:</p>
-                        <div class="current-streak-box">
-                            <p id="current-score">0</p>
-                        </div>
-                    </div>
-                    <div class="best-streak">   
-                        <p class="score-title">Best Streak:</p>
-                        <div class="best-streak-box">
-                            <p id="best-score">0</p>
-                        </div>
+        <div class="game-container">
+            <h1 class="game-header">Chore Door</h1>
+            <table class="instructions-row">
+                <tr>
+                    <td class="instructions-number">1</td>
+                    <td class="instructions-text">Hiding behind one of these doors is the ChoreBot.</td>
+                </tr>
+                <tr>
+                    <td class="instructions-number">2</td>
+                    <td class="instructions-text">Your mission is to open all of the doors without running into the ChoreBot.</td>
+                </tr>
+                <tr>
+                    <td class="instructions-number">3</td>
+                    <td class="instructions-text">If you manage to avoid the ChoreBot until you open the very last door, you win!</td>
+                </tr>
+                <tr>
+                    <td class="instructions-number">4</td>
+                    <td class="instructions-text">Please enter a number between 2 and 8 to start the game.</td>
+                </tr>
+            </table>
+        
+            <!--Doors will be added here through JavaScript-->
+            <div id="door-rows" class="door-row"></div>
+        
+            <div id="game-reqs">
+                <div class="numOfDoorsInput">
+                    <form>
+                        <label for="numOfDoors">Number of Doors:</label>
+                        <input type="text" id="numOfDoors">
+                        <button id="btn" type="submit">Send</button>
+                    </form>
+                </div>
+                <div id="start" class="start-row">Good Luck!</div>
+            </div>    
+            <div id="score-tracker" class="score-row">
+                <div class="current-streak">
+                    <p class="score-title">Current Streak:</p>
+                    <div class="current-streak-box">
+                        <p id="current-score">0</p>
                     </div>
                 </div>
-            </div>    
-            <section class="project-container">
-                <div id="projects">
-                    <div class="project-item num-1 center">
-                        <div class="image-container">
-                            <a href="#"><img src="./resources/Wastebin-logo2.PNG" alt="Wastebin Logo"></a>
-                        </div>
-                        <p>Wastebin is a clone of the site hastebin.com. The project was largely based around react with
-                            small amounts of Javascript and CSS.
-                        </p>
+                <div class="best-streak">   
+                    <p class="score-title">Best Streak:</p>
+                    <div class="best-streak-box">
+                        <p id="best-score">0</p>
                     </div>
-
-                    <div class="project-item num-2 center">
+                </div>
+            </div>
+        </div>    
+        <section class="project-container">
+            <div id="projects">
+                <div class="project-item num-1 center">
+                    <div class="item-container">
+                    <a href="#">
                         <div class="image-container">
-                            <a href="#"><img src="./resources/Choredoor-logo2.PNG" alt="Wastebin Logo"></a>
-                        </div>
-                        <p>Chore door is a simple game of chance where the tries to open all the doors without opening the 
-                            door that reveals a robot. If the last door opened reveals a robot then you win!
-                        </p>
-                    </div>
-
-                    <div class="project-item num-3 center">
-                        <div class="image-container">
-                            <a href="#"><img src="./resources/Wastebin-logo.PNG" alt="Personal Wesbite"></a>
+                            <img src="./resources/Wastebin-logo2.PNG" alt="Wastebin Logo">
                         </div>
                         <div class="text-container">
-                            <p>I have created a small RESTful API, with the four common commmands, GET, POST, PUT, DELETE.
+                            <p>Wastebin is a clone of the site hastebin.com. The project was largely based around react with
+                                small amounts of Javascript and CSS.
                             </p>
-                        </div>    
-                    </div>
-
-                    <div class="project-item num-4 center">
-                        <div class="image-container">
-                            <a href="#"><img src="./resources/Wastebin-logo.PNG" alt="Personal Wesbite"></a>
-                        </div>
-                        <p>The github link to my personal website so you can browse to code to all my past and current projects.
-                        </p>
-                    </div>
-
-                    <a class="twitter-timeline" data-lang="en" data-width="300" data-height="520" href="https://twitter.com/JavaScript?ref_src=twsrc%5Etfw">Tweets by JavaScript</a> 
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div> 
+                    </a>   
+                    </div>    
                 </div>
-            </section>
-        </div>       
+
+                <div class="project-item num-2 center">
+                    <div class="item-container">
+                        <a href="#">
+                            <div class="image-container">
+                                <img src="./resources/Choredoor-logo2.PNG" alt="Wastebin Logo">
+                            </div>
+                            <div class="text-container">
+                                <p>Chore door is a simple game of chance where you try to open all the doors without opening the 
+                                    one that reveals a robot.
+                                </p>
+                            </div>    
+                        </a>
+                    </div>    
+                </div>
+
+                <div class="project-item num-3 center">
+                    <div class="item-container">
+                        <a href="#">
+                            <div class="image-container">
+                                <img src="./resources/Wastebin-logo.PNG" alt="Personal Wesbite">
+                            </div>
+                            <div class="text-container">
+                                <p>I have created a small RESTful API, with the four common commmands, GET, POST, PUT, DELETE.
+                                </p>
+                            </div>  
+                        </a>
+                    </div>      
+                </div>
+
+                <div class="project-item num-4 center">
+                    <div class="item-container"
+                    >   <a href="#">
+                            <div class="image-container">
+                                <img src="./resources/github-logo.png" alt="Personal Wesbite">
+                            </div>
+                            <div class="text-container">
+                                <p>The github link to my personal website so you can browse to code to all my past and current projects.
+                                </p>   
+                            </div>    
+                        </a>     
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <a class="twitter-timeline" data-lang="en" data-width="300" data-height="520" href="https://twitter.com/JavaScript?ref_src=twsrc%5Etfw">Tweets by JavaScript</a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </section>
+     
     </main>
 </body>
 </html>

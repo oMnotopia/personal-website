@@ -72,41 +72,128 @@ header .mobile {
     display: none;  
 }
 
+/* Tablet Styling */
+
+@media only screen and (max-device-width: 768px) {
+    .logo {
+        display: none;
+    }
+
+    header {
+        display: block;
+        width: 100%;
+    }
+
+    header .content {
+        padding-left: 0;
+        padding-right: 0; 
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+
+    ul {
+        padding: 0;
+        justify-content: space-around;
+    }
+
+    .content li {
+        padding: 0;
+    }
+}
+
+/* Phone Styling */
+
+@media only screen and (max-device-width: 425px) {
+  
+    .game-container {
+        display: none;
+    }
+}
+
 /* Body Styles */
-
-
-
 /* Body Styles - Projects */
-#projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: auto;
-    gap: 3rem;
-    width: 60%;
-}
-
-.project-item {
-    width: 33%;
-    border: 1px solid #000;
-    border-radius: 1rem;
-    background-color: #FFF;
-}
-
-.project-item img {
-    border-radius: 1rem 1rem 0 0;
-    width: 100%;
-    height: 100%;
-
-}
-
-.project-item .image-container {
-    height: 10rem;
-}
 
 .project-container {
     margin: 2rem 0;
 }
+
+#projects {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: auto;
+    width: 60%;    
+}
+
+.project-item { 
+    border-radius: 1rem;
+    background-color: #000;
+}
+
+.project-item:hover {
+    opacity: 0.2;
+}
+
+.item-container { 
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: .625rem 0;
+    border-radius: 1rem;
+}
+
+.item-container .image-container {
+    height: 46%;
+}
+
+.item-container img {
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.item-container .text-container {
+    height: 46%;
+    overflow: hidden;
+    background-color: #FFF;
+    border-radius: 0 0 1rem 1rem;
+    text-align: center
+}
+
+.item-container p {
+    padding: 0.75rem 1rem;
+    margin: 0;
+    color:#000;
+}
+
+@media only screen and (max-device-width: 768px) {
+    #projects {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: auto;
+        width: 80%;    
+    }
+}
+
+@media only screen and (max-device-width: 425px) {
+    #projects {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: auto;
+        width: 75%;    
+    }
+}
+
+/* Twitter Styles */
 
 #twitter-widget-0 {
     width: 10%;
@@ -114,30 +201,24 @@ header .mobile {
 }
 
 .c1 {
-    height: 5rem;
-    width: 5rem;
     background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    opacity: 0.6;
     transform: translate(1.5rem, 1.5rem);
 }
 .c2 {
-    height: 5rem;
-    width: 5rem;
     background-color: blue;
-    border-radius: 50%;
-    position: absolute;
-    opacity: 0.6;
     transform: translate(3rem, 0);
 }
 .c3 {
+    background-color: green;
+}
+
+.c1, .c2, .c3 {
     height: 5rem;
     width: 5rem;
-    background-color: green;
     border-radius: 50%;
-    position: absolute;
     opacity: 0.6;
+    margin: 0;
+
 }
 
 #circle-container {
