@@ -1,7 +1,6 @@
 .game-header {
-    color: #FFF;
+    color: rgba(24, 20, 20, 0.6);
     margin: 0;
-
 }
 
 .title-row {
@@ -31,7 +30,7 @@
 .instructions-text {
     padding: .625rem;
     font-size: .875rem;
-    color: #FFF;
+    color: rgba(0, 0, 0, 1);;
 }
 
 .door-frame {
@@ -40,15 +39,17 @@
 }
 
 .start-row {
-    margin: auto;
+    margin: 1.3125rem auto;
     width: 7.5rem;
-    height: 2.6875rem;
-    background-color: #EB6536;
-    padding-top: 1.125rem;
-    font-size: 1.125rem;
+    height: 3.875rem;
+    background-color: #578CA9;
     color: #010165;
-    margin-bottom: 1.3125rem;
+    font-size: 1.125rem;
     cursor: pointer;
+    border-radius: .5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #score-tracker {
@@ -64,11 +65,12 @@
 }
 
 .current-streak-box, .best-streak-box {
-    background-color: #0FF;
+    background-color: #259B9A;
     height: 4.5rem;
     width: 4.25rem;
     text-align: center;
     margin: auto;
+    border-radius: .5rem;
 }
 
 .current-streak-box > p, .best-streak-box > p {
