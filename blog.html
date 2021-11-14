@@ -11,372 +11,388 @@
     
     <script src="script.js" type="text/javascript" defer></script>
     <script src="searchbar.js" type="text/javascript" defer></script>
+    <script src="darkmode.js" type="text/javascript" defer></script>
 </head>
 <body>
-    <header>
-        <div class="content">
-            <a href="index.html" class="desktop logo">oMnotopia</a>
-            <nav class="desktop">
-                <ul>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a></li>
-                </ul>
-            </nav>   
-        </div>
-    </header>
-    <main>
-        <div id="search-container">
-            <input type="text" id="searchInput" placeholder="Search topics...">
-        </div>
-        <div id="blog-container">
-            <article id="hoisting" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <div class="item-container">
-                    <h2>Hoisting</h2>
-                    <p>
-                        Hoisting is Javascripts default behaviour, it means that all declarations are moved to the top of
-                        the current scope(current script or function). In some situations hoisting can be useful, but you will 
-                        see in examles below that most of the time hoisting is not 
-                        good and can result in errors or unexpected outputs. The simplest way to avoid those 
-                        situations is to declare your varables and functions at the top of your javascript programs before 
-                        any statements that require or manipulate the information contained within them.
-                    </p>
-                    <p>
-                        Variables that are defined with <i>let</i> <i>const</i>, or <i>var</i> are hoisted to the top of the scope 
-                        but not initialized. This means that the variable exists in the code but cannot be used until it is 
-                        declared. <i>Let</i> differs from <i>const</i> in that if you try to use a <i>let</i> before it is declared 
-                        you will get a <i style="color:red">ReferenceError</i>, whereas if <i>const</i> is used before it is 
-                        declared you will get a syntax error and the code will not run.
-                    </p>
-                    <figure class="blog-image small">
-                        <img src="./resources/blog-hoisting-resources/let-reference_error.PNG" alt="Example of a let reference error">
-                        <figcaption>Example of let being used before it is declared, results in a reference error.</figcaption>
-                    </figure>
-                    <figure class="blog-image small">
-                        <img src="./resources/blog-hoisting-resources/const-syntax_error.PNG" alt="Example of a const syntax error">
-                        <figcaption>Example of const being used before it is declared, results in a syntax error.</figcaption>
-                    </figure>
-                    <p>
-                        An example of where hoisting can prevent your code from getting an error is shown below. In this example
-                        the variable is initialized at the top of the code but declared at the bottom. 
-                        JavaScript hoists the declaration of the variable above the <i>console.log</i> statement. If the 
-                        variable was not hoisted an error would be generated. This is an example though and generally not 
-                        best practice as declaring and initializing variables at the top of their scope allows for easier 
-                        readability of code.
-                    </p>
-                        <figure class="blog-image">
-                            <img src="./resources/blog-hoisting-resources/benefit.PNG" alt="Example of hoisting preventing errors">
+    <div id="theme" class="light">
+        <header>
+            <div class="content">
+                <a href="index.html" class="logo">oMnotopia</a>
+                <nav>
+                    <ul class="siteNav">
+                        <li class="blog"><a href="blog.html">Blog</a></li>
+                        <li class="projectsLink"><a href="">Projects</a></li>
+                        <li class="aboutMe"><a href="#">About Me</a></li>
+                        <li class="githubLink"><a href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a></li>
+                        <li class="mode">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span id="slider"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </nav>   
+            </div>
+        </header>
+        <main>
+            <div id="search-container">
+                <input type="text" id="searchInput" placeholder="Search topics...">
+            </div>
+            <div id="blog-container">
+                <article id="hoisting" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>Hoisting</h2>
+                        <p>
+                            Hoisting is Javascripts default behaviour, it means that all declarations are moved to the top of
+                            the current scope(current script or function). In some situations hoisting can be useful, but you will 
+                            see in examles below that most of the time hoisting is not 
+                            good and can result in errors or unexpected outputs. The simplest way to avoid those 
+                            situations is to declare your varables and functions at the top of your javascript programs before 
+                            any statements that require or manipulate the information contained within them.
+                        </p>
+                        <p>
+                            Variables that are defined with <i>let</i> <i>const</i>, or <i>var</i> are hoisted to the top of the scope 
+                            but not initialized. This means that the variable exists in the code but cannot be used until it is 
+                            declared. <i>Let</i> differs from <i>const</i> in that if you try to use a <i>let</i> before it is declared 
+                            you will get a <i style="color:red">ReferenceError</i>, whereas if <i>const</i> is used before it is 
+                            declared you will get a syntax error and the code will not run.
+                        </p>
+                        <figure class="blog-image small">
+                            <img src="./resources/blog-hoisting-resources/let-reference_error.PNG" alt="Example of a let reference error">
+                            <figcaption>Example of let being used before it is declared, results in a reference error.</figcaption>
+                        </figure>
+                        <figure class="blog-image small">
+                            <img src="./resources/blog-hoisting-resources/const-syntax_error.PNG" alt="Example of a const syntax error">
                             <figcaption>Example of const being used before it is declared, results in a syntax error.</figcaption>
                         </figure>
-                    <p>
-                        Another thing to know about how let and const hoisting is that only the declaration of a 
-                        variable will be hoisted. If you have an initialization attached the the declaration, the 
-                        initialization will not be hoisted and you may run into situations where an error is compiled, or something else.
-                        In the two images below, the code is syntactically the same. Both will result in a console log
-                        of "undefined". 
-                    </p>
-                    <figure class="blog-image">
-                        <img src="./resources/blog-hoisting-resources/initialization_error-Part1.PNG" alt="Initialization example resulting in error">
-                        <figcaption>This code is the same as below and results in a console log of "undefined".</figcaption>
-                    </figure>
-                    <figure class="blog-image">
-                        <img src="./resources/blog-hoisting-resources/initialization_error-Part2.PNG" alt="Initialization example resulting in error">
-                        <figcaption>This code is the same as above and results in a console log of "undefined".</figcaption>
-                    </figure>
-                    <p>
-                        The top image of the two above is a good example of hoisting because we would expect to get a 
-                        <i style="color:red">ReferenceError</i> since the console is trying to log a variable that 
-                        has not yet been declared. The reason we instead get a log of <i>undefined</i> is that the 
-                        variable <i>"greatestHockeyPlayer"</i> is hoisted to the top of the program. This is what is being 
-                        shown in the bottom image, and writing the code this way produces the same result.
-                    </p>
-                    <h3>Hoisting & Functions</h3>
-                    <p>
-                        Hoisting effects more than just variables it also effects functions. In JavaScript all named 
-                        functions are hoisted in the same way that variables are. That means if you declare a named 
-                        function after you call it, the function will still run as expected because the declaration is 
-                        hoisted to the top of its scope. This is shown below.
-                    </p>
-                    <figure class="blog-image">
-                        <img src="./resources/blog-hoisting-resources/named_functions.PNG" alt="Hoisting of a named function">
-                        <figcaption>Hoisting of a named function.</figcaption>
-                    </figure>
-                    <p>
-                        If you want your functions to not be hoisted we simply need to make them anonymous and assign 
-                        them to a variable. The variable that is assigned to the anonymous function will be hoisted, 
-                        but the initialization of the variable into a function is not hoisted. This is shown below.
-                    </p>
-                    <figure class="blog-image">
-                        <img src="./resources/blog-hoisting-resources/unnamed_functions.PNG" alt="Unnamed functions are not hoisted">
-                        <figcaption>Unnamed functions are not hoisted.</figcaption>
-                    </figure>
-                </div>
-            </article>
+                        <p>
+                            An example of where hoisting can prevent your code from getting an error is shown below. In this example
+                            the variable is initialized at the top of the code but declared at the bottom. 
+                            JavaScript hoists the declaration of the variable above the <i>console.log</i> statement. If the 
+                            variable was not hoisted an error would be generated. This is an example though and generally not 
+                            best practice as declaring and initializing variables at the top of their scope allows for easier 
+                            readability of code.
+                        </p>
+                            <figure class="blog-image">
+                                <img src="./resources/blog-hoisting-resources/benefit.PNG" alt="Example of hoisting preventing errors">
+                                <figcaption>Example of const being used before it is declared, results in a syntax error.</figcaption>
+                            </figure>
+                        <p>
+                            Another thing to know about how let and const hoisting is that only the declaration of a 
+                            variable will be hoisted. If you have an initialization attached the the declaration, the 
+                            initialization will not be hoisted and you may run into situations where an error is compiled, or something else.
+                            In the two images below, the code is syntactically the same. Both will result in a console log
+                            of "undefined". 
+                        </p>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-hoisting-resources/initialization_error-Part1.PNG" alt="Initialization example resulting in error">
+                            <figcaption>This code is the same as below and results in a console log of "undefined".</figcaption>
+                        </figure>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-hoisting-resources/initialization_error-Part2.PNG" alt="Initialization example resulting in error">
+                            <figcaption>This code is the same as above and results in a console log of "undefined".</figcaption>
+                        </figure>
+                        <p>
+                            The top image of the two above is a good example of hoisting because we would expect to get a 
+                            <i style="color:red">ReferenceError</i> since the console is trying to log a variable that 
+                            has not yet been declared. The reason we instead get a log of <i>undefined</i> is that the 
+                            variable <i>"greatestHockeyPlayer"</i> is hoisted to the top of the program. This is what is being 
+                            shown in the bottom image, and writing the code this way produces the same result.
+                        </p>
+                        <h3>Hoisting & Functions</h3>
+                        <p>
+                            Hoisting effects more than just variables it also effects functions. In JavaScript all named 
+                            functions are hoisted in the same way that variables are. That means if you declare a named 
+                            function after you call it, the function will still run as expected because the declaration is 
+                            hoisted to the top of its scope. This is shown below.
+                        </p>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-hoisting-resources/named_functions.PNG" alt="Hoisting of a named function">
+                            <figcaption>Hoisting of a named function.</figcaption>
+                        </figure>
+                        <p>
+                            If you want your functions to not be hoisted we simply need to make them anonymous and assign 
+                            them to a variable. The variable that is assigned to the anonymous function will be hoisted, 
+                            but the initialization of the variable into a function is not hoisted. This is shown below.
+                        </p>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-hoisting-resources/unnamed_functions.PNG" alt="Unnamed functions are not hoisted">
+                            <figcaption>Unnamed functions are not hoisted.</figcaption>
+                        </figure>
+                    </div>
+                </article>
 
-            <article id="Defer-Async" class="blog-item collapsible"  attr-small='96px' style='height:96px;'>
-                <div class="item-container">
-                    <h2>Defer, Async, and Paser-Blocking JavaScript</h2>
-                    <p>
-                        The attributes <b>"Defer"</b> and <b>"Async"</b> belong to the <i>&lt;script&gt;</i> element. The use of 
-                        the attributes changes the way the DOM behaves when loading its contents. The default behaviour 
-                        of JavaScript is <b>"Parser-Blocking"</b>, which happens when a browser hits a <i>&lt;script&gt;</i> tag. 
-                        The construction of the DOM is paused until the JavaScript runtime has taken control and allowed 
-                        the script to execute. Javascript parser-blocking differs from how HTML is parsed which allows for 
-                        images and other elements to be loaded while the rest of the content continues to parse. So when a
-                        an HTML site encounters the <i>&lt;script&gt;</i> tag it will normally pause, download the JS, and 
-                        execute the JS. How this normally happens can be seen in the image below.
-                    </p>
-                    <figure class="blog-image">
-                        <img src="./resources/blog-defer_async_parser-resources/block-parser.PNG" alt="Normal DOM loading">
-                        <figcaption></figcaption>
-                    </figure>
-                    <p>
-                        When async is included in a script tag, like so <i>&lt;script src="" async&gt;</i>, it causes the default
-                        behaviour of parser-blocking to be disabled and downloads the JS asynchronously to the HTML parsing. 
-                        Like the default behaviour, when async finishes downloading the JS it causes the HTML parsing to pause 
-                        while the script is executed. Once the script is executed any remaining HTML is parsed. One caveat
-                        to using async is that it will execute the JS files in whatever order they finish downloading. This 
-                        can be a bad thing if you some of your scripts have dependancies, as it may cause the dependants 
-                        to load before the files they depend on. The image below shows the how the JS is downloaded 
-                        alongside the HTML being parsed.
-                    </p>
-                    <figure class="blog-image">
-                        <img src="./resources/blog-defer_async_parser-resources/async.PNG" alt="How async effects DOM loading">
-                        <figcaption></figcaption>
-                    </figure>
-                    <p>
-                        When defer is included in a script tag, like so <i>&lt;script src="" defer&gt;</i>, its boolean value is
-                        set, indicating to a browser that the script meant to be executed after the document has been 
-                        fully parsed, but also before the DOMContentLoaded attribute has fired. Defer causes the entire
-                        HTML file to be parsed and JS scripts to be downloaded before it executes the JS files. This 
-                        means that the HTML parsing does not need to pause, and potentially be delayed due to large JS 
-                        files. Using defer also means that all JS files will be executed in the order that they are 
-                        added into the HTML code, so if you have files with dependancies simply place those files after 
-                        the ones providing code. The image below shows how HTML is fully parsed and JS files downloaded 
-                        before they are executed.
-                    </p>
-                    <figure class="blog-image">
-                        <img src="./resources/blog-defer_async_parser-resources/defer.PNG" alt="How defer effects DOM loading">
-                        <figcaption></figcaption>
-                    </figure>
-                    <p>
-                        *Note: There is no need to use the defer attribute when loading scripts associated with modules, 
-                        this is because modules are deferred automatically. Also, <b>defer</b> and <b>async</b> only have
-                        an effect on external scripts, so are only to be used when an src attribute is present.
-                    </p>
-                </div>
-            </article >
+                <article id="Defer-Async" class="blog-item collapsible"  attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>Defer, Async, and Paser-Blocking JavaScript</h2>
+                        <p>
+                            The attributes <b>"Defer"</b> and <b>"Async"</b> belong to the <i>&lt;script&gt;</i> element. The use of 
+                            the attributes changes the way the DOM behaves when loading its contents. The default behaviour 
+                            of JavaScript is <b>"Parser-Blocking"</b>, which happens when a browser hits a <i>&lt;script&gt;</i> tag. 
+                            The construction of the DOM is paused until the JavaScript runtime has taken control and allowed 
+                            the script to execute. Javascript parser-blocking differs from how HTML is parsed which allows for 
+                            images and other elements to be loaded while the rest of the content continues to parse. So when a
+                            an HTML site encounters the <i>&lt;script&gt;</i> tag it will normally pause, download the JS, and 
+                            execute the JS. How this normally happens can be seen in the image below.
+                        </p>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-defer_async_parser-resources/block-parser.PNG" alt="Normal DOM loading">
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            When async is included in a script tag, like so <i>&lt;script src="" async&gt;</i>, it causes the default
+                            behaviour of parser-blocking to be disabled and downloads the JS asynchronously to the HTML parsing. 
+                            Like the default behaviour, when async finishes downloading the JS it causes the HTML parsing to pause 
+                            while the script is executed. Once the script is executed any remaining HTML is parsed. One caveat
+                            to using async is that it will execute the JS files in whatever order they finish downloading. This 
+                            can be a bad thing if you some of your scripts have dependancies, as it may cause the dependants 
+                            to load before the files they depend on. The image below shows the how the JS is downloaded 
+                            alongside the HTML being parsed.
+                        </p>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-defer_async_parser-resources/async.PNG" alt="How async effects DOM loading">
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            When defer is included in a script tag, like so <i>&lt;script src="" defer&gt;</i>, its boolean value is
+                            set, indicating to a browser that the script meant to be executed after the document has been 
+                            fully parsed, but also before the DOMContentLoaded attribute has fired. Defer causes the entire
+                            HTML file to be parsed and JS scripts to be downloaded before it executes the JS files. This 
+                            means that the HTML parsing does not need to pause, and potentially be delayed due to large JS 
+                            files. Using defer also means that all JS files will be executed in the order that they are 
+                            added into the HTML code, so if you have files with dependancies simply place those files after 
+                            the ones providing code. The image below shows how HTML is fully parsed and JS files downloaded 
+                            before they are executed.
+                        </p>
+                        <figure class="blog-image">
+                            <img src="./resources/blog-defer_async_parser-resources/defer.PNG" alt="How defer effects DOM loading">
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            *Note: There is no need to use the defer attribute when loading scripts associated with modules, 
+                            this is because modules are deferred automatically. Also, <b>defer</b> and <b>async</b> only have
+                            an effect on external scripts, so are only to be used when an src attribute is present.
+                        </p>
+                    </div>
+                </article >
 
-            <article id="bubbling" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <div class="item-container" >
-                    <h2>Bubbling & Capture</h2>
-                    <p>
-                        Bubbling or Event Bubbling is when multiple events are triggered with methods like, <i>"onclick()"</i> or
-                        <i>"addEventListener()"</i>, with a single action. A simple example is when a user clicks a 
-                        once on an element with an event listener, with a handler of click, that has a parent element behind 
-                        it that also has an event listener. This can best be understood in terms of how the "Document 
-                        Object Model" (DOM) is layed out and how each element fits into the model.
-                    </p>
-                    <figure class="blog-image large">
-                        <img src="./resources/blog-bubbling_capturing-resources/example-bubbling.png" alt="Bubbling in the DOM">
-                        <figcaption>Bubbling and its path through the DOM</figcaption>
-                    </figure>
-                    <p>
-                        The image above shows two events that that are being triggered on a grandparent element(div class="project-item") 
-                        and then its grandchild element(a). Both elements need to be triggered by the same <i>event</i>, in our case it 
-                        could be a "click". When the anchor element(&lt;a&gt;) is clicked the event listener on the anchor will trigger, 
-                        but it will also trigger the grandparent element, "project-item". This is what bubbling is, think of it as when
-                        a bubble forms below the surface, it rises up through the water until it reaches the top. In this case our bubble 
-                        just happens to be triggering all the even listeners on elements above what was clicked. An important detail  to 
-                        understand is that if bubbling is set and the div "project-item" is clicked it won't trigger the anchor elements 
-                        event listener.
-                    </p>
-                </div>
-            </article>
+                <article id="bubbling" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container" >
+                        <h2>Bubbling & Capture</h2>
+                        <p>
+                            Bubbling or Event Bubbling is when multiple events are triggered with methods like, <i>"onclick()"</i> or
+                            <i>"addEventListener()"</i>, with a single action. A simple example is when a user clicks a 
+                            once on an element with an event listener, with a handler of click, that has a parent element behind 
+                            it that also has an event listener. This can best be understood in terms of how the "Document 
+                            Object Model" (DOM) is layed out and how each element fits into the model.
+                        </p>
+                        <figure class="blog-image large">
+                            <img src="./resources/blog-bubbling_capturing-resources/example-bubbling.png" alt="Bubbling in the DOM">
+                            <figcaption>Bubbling and its path through the DOM</figcaption>
+                        </figure>
+                        <p>
+                            The image above shows two events that that are being triggered on a grandparent element(div class="project-item") 
+                            and then its grandchild element(a). Both elements need to be triggered by the same <i>event</i>, in our case it 
+                            could be a "click". When the anchor element(&lt;a&gt;) is clicked the event listener on the anchor will trigger, 
+                            but it will also trigger the grandparent element, "project-item". This is what bubbling is, think of it as when
+                            a bubble forms below the surface, it rises up through the water until it reaches the top. In this case our bubble 
+                            just happens to be triggering all the even listeners on elements above what was clicked. An important detail  to 
+                            understand is that if bubbling is set and the div "project-item" is clicked it won't trigger the anchor elements 
+                            event listener.
+                        </p>
+                    </div>
+                </article>
 
-            <article id="scope" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <div class="item-container">
-                    <h2>Scope(Block/Function)</h2>
-                    <p>Scope can be defined in a few ways in Javascript:</p>
-                    <ul>
-                        <li>Global</li>
-                        <li>Function</li>
-                        <li>Block</li>
-                    </ul>
-                    
-                    <p>
-                        Global scope, is when a variable can be accessed from anywhere else in the program. This means it can be 
-                        accessed by calls from inside any function or block. Function scope is applied to variables set inside a 
-                        function, very complex stuff. If a variable is set inside of a function a call from the global scope wants 
-                        access to it, it won't be able to. This is because scope only passes down, and in Javascript, scope goes 
-                        from global-->function-->block. Finally block scope applies to variables that are set in a block (anything 
-                        inside of a set of curly braces). Block scope also shows another difference between the old "var" and "let" 
-                        and "const". "Var" does not have block scope, but is applied to both "let" and "const". This just means 
-                        that a variable declared with var in a block can be called from outside that block whereas, variables 
-                        declared with let and const cannot be called from outside the block.
-                    </p>
-                    <p>
-                        When a variable is called that is inside a nested function Javascript will first look in its block scope, if no 
-                        value is found, it will then look in the function, or local, scope outside of the block. Again, if no value 
-                        is found then Javascript keeps looking at more and more outer scopes until it find the value or reaches the 
-                        global scope. In most cases if no value for the variable is found in the global scope then an error will be 
-                        returned.
-                    </p>
-                </div>
-            </article >
-
-            <article id="restAPI" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <div class="item-container">
-                    <h2>REST APIs</h2>
-                    <p>
-                        A <b>RE</b>presentational <b>S</b>tate <b>T</b>ransfer(REST) <b>A</b>pplication 
-                        <b>P</b>rogramming <b>I</b>nterface (API), is an API that conforms to a software architectural 
-                        style. This architectural style defines a set of constraints not standards and protocols 
-                        like an API. In other words APIs can follow <i>REST</i>ful constraints, or not. If they 
-                        do then they are able to access web resources that also use those constraints. 
-                        If they dont follow the <i>REST</i>ful constraints then they are unable to access web 
-                        resources using those constraints.
-                    </p>
-                    <p>
-                        In order for an API to be considered <i>REST</i>ful, it must conform to six main 
-                        constraints:
+                <article id="scope" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>Scope(Block/Function)</h2>
+                        <p>Scope can be defined in a few ways in Javascript:</p>
                         <ul>
-                            <li>Client-Server Architechture</li>
-                            <li>Statelessness</li>
-                            <li>cacheability</li>
-                            <li>Layered System</li>
-                            <li>Code on Demand (optional)</li>
-                            <li>Uniform Interface</li>
+                            <li>Global</li>
+                            <li>Function</li>
+                            <li>Block</li>
                         </ul>
-                    </p>
-                    <p><b>Client-Server Architechture</b> is necessary for seperation of concerns, which in our 
-                    case is the seperation of frontend and backend concerns. Seperation allows for seperate 
-                    sections of code to operate independantly of other sections, allowing for greater portability, 
-                    simplification, scalability, and most importantly independant evolution of components.
-                    </p> 
-                    <p><b>Statelessness</b>, meaning that no client information is stored between requests, and 
-                        each request is seperate and unconnected. This allows for increased performance in high 
-                        volume applications, by removing server load caused by holding of session information.
-                    </p> 
-                    <p><b>Cacheability</b>, meaning responses must implicitly or explicitly define themselves as 
-                        cacheable in order to prevent clients from providing inapropirate data in response to 
-                        further requests. When caching is done appropriately it can reduce or eliminate some 
-                        client-server interactions, which improves scalability and performance.
-                    </p> 
-                    <p><b>Layered Systems</b> organize each type of server, security, load balancing, and others 
-                        that are involved in the retrieval of requested information into heirarchies that are 
-                        invisible to the client.
-                    </p> 
-                    <p><b>Uniform Interface</b> is a fundamental contraint of a RESTful system. It allows for 
-                        simpler and more modular architecture which enables each section to evolve independantly. 
-                        The four requirements that make up uniform interface are:
-                        <ul>
-                            <li>Resource Identifcation in Requests - The resources that are being requested are 
-                                identifiable and seperate from the representations sent to the client.
-                            </li>
-                            <li>Resource Manipulation Through Representations - The client is able to manipulate 
-                                resources via the representation because the representation contains enough 
-                                information to allow the client to do so.</li>
-                            <li>Self Descriptive Messages - Each message has enough information describing how 
-                                the message should be processed by the client.
-                            </li>
-                            <li>Hypermedia As The Engine Of Application State (HATEOAS) - Meaning that once a 
-                                client has accessed a resource, they should be able to use hyperlinks to find 
-                                all other currently available actions.
-                            </li>
-                        </ul>
-                    </p>  
-                    <p><b>Code on Demand</b> is the ability to send executable code residing on a server to a 
-                        client as requested, in order to extend the clients functionality.
-                    </p> 
-                </div>
-            </article>
-            <article id="Closures" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <div class="item-container">
-                    <h2>Closures</h2>
-                    <p>
-                        A closure is a function that will retain access to its parents scope even after the parent function 
-                        has closed. This is done by having a parent function return a child function. The eaxmple below 
-                        shows a simple case of a closure.
-                    </p>
-                    <pre>
-                        <code class="closure-exp">
-                            const parentFunction = () => {
-                                let num = 99;
-                                const childFunction = () => {
-                                    console.log(`The number of the greatest hockey player is ${num}`)
+                        
+                        <p>
+                            Global scope, is when a variable can be accessed from anywhere else in the program. This means it can be 
+                            accessed by calls from inside any function or block. Function scope is applied to variables set inside a 
+                            function, very complex stuff. If a variable is set inside of a function a call from the global scope wants 
+                            access to it, it won't be able to. This is because scope only passes down, and in Javascript, scope goes 
+                            from global-->function-->block. Finally block scope applies to variables that are set in a block (anything 
+                            inside of a set of curly braces). Block scope also shows another difference between the old "var" and "let" 
+                            and "const". "Var" does not have block scope, but is applied to both "let" and "const". This just means 
+                            that a variable declared with var in a block can be called from outside that block whereas, variables 
+                            declared with let and const cannot be called from outside the block.
+                        </p>
+                        <p>
+                            When a variable is called that is inside a nested function Javascript will first look in its block scope, if no 
+                            value is found, it will then look in the function, or local, scope outside of the block. Again, if no value 
+                            is found then Javascript keeps looking at more and more outer scopes until it find the value or reaches the 
+                            global scope. In most cases if no value for the variable is found in the global scope then an error will be 
+                            returned.
+                        </p>
+                    </div>
+                </article >
+
+                <article id="restAPI" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>REST APIs</h2>
+                        <p>
+                            A <b>RE</b>presentational <b>S</b>tate <b>T</b>ransfer(REST) <b>A</b>pplication 
+                            <b>P</b>rogramming <b>I</b>nterface (API), is an API that conforms to a software architectural 
+                            style. This architectural style defines a set of constraints not standards and protocols 
+                            like an API. In other words APIs can follow <i>REST</i>ful constraints, or not. If they 
+                            do then they are able to access web resources that also use those constraints. 
+                            If they dont follow the <i>REST</i>ful constraints then they are unable to access web 
+                            resources using those constraints.
+                        </p>
+                        <p>
+                            In order for an API to be considered <i>REST</i>ful, it must conform to six main 
+                            constraints:
+                            <ul>
+                                <li>Client-Server Architechture</li>
+                                <li>Statelessness</li>
+                                <li>cacheability</li>
+                                <li>Layered System</li>
+                                <li>Code on Demand (optional)</li>
+                                <li>Uniform Interface</li>
+                            </ul>
+                        </p>
+                        <p><b>Client-Server Architechture</b> is necessary for seperation of concerns, which in our 
+                        case is the seperation of frontend and backend concerns. Seperation allows for seperate 
+                        sections of code to operate independantly of other sections, allowing for greater portability, 
+                        simplification, scalability, and most importantly independant evolution of components.
+                        </p> 
+                        <p><b>Statelessness</b>, meaning that no client information is stored between requests, and 
+                            each request is seperate and unconnected. This allows for increased performance in high 
+                            volume applications, by removing server load caused by holding of session information.
+                        </p> 
+                        <p><b>Cacheability</b>, meaning responses must implicitly or explicitly define themselves as 
+                            cacheable in order to prevent clients from providing inapropirate data in response to 
+                            further requests. When caching is done appropriately it can reduce or eliminate some 
+                            client-server interactions, which improves scalability and performance.
+                        </p> 
+                        <p><b>Layered Systems</b> organize each type of server, security, load balancing, and others 
+                            that are involved in the retrieval of requested information into heirarchies that are 
+                            invisible to the client.
+                        </p> 
+                        <p><b>Uniform Interface</b> is a fundamental contraint of a RESTful system. It allows for 
+                            simpler and more modular architecture which enables each section to evolve independantly. 
+                            The four requirements that make up uniform interface are:
+                            <ul>
+                                <li>Resource Identifcation in Requests - The resources that are being requested are 
+                                    identifiable and seperate from the representations sent to the client.
+                                </li>
+                                <li>Resource Manipulation Through Representations - The client is able to manipulate 
+                                    resources via the representation because the representation contains enough 
+                                    information to allow the client to do so.</li>
+                                <li>Self Descriptive Messages - Each message has enough information describing how 
+                                    the message should be processed by the client.
+                                </li>
+                                <li>Hypermedia As The Engine Of Application State (HATEOAS) - Meaning that once a 
+                                    client has accessed a resource, they should be able to use hyperlinks to find 
+                                    all other currently available actions.
+                                </li>
+                            </ul>
+                        </p>  
+                        <p><b>Code on Demand</b> is the ability to send executable code residing on a server to a 
+                            client as requested, in order to extend the clients functionality.
+                        </p> 
+                    </div>
+                </article>
+                <article id="Closures" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>Closures</h2>
+                        <p>
+                            A closure is a function that will retain access to its parents scope even after the parent function 
+                            has closed. This is done by having a parent function return a child function. The eaxmple below 
+                            shows a simple case of a closure.
+                        </p>
+                        <pre>
+                            <code class="closure-exp">
+                                const parentFunction = () => {
+                                    let num = 99;
+                                    const childFunction = () => {
+                                        console.log(`The number of the greatest hockey player is ${num}`)
+                                    }
+                                    return childFunction
                                 }
-                                return childFunction
-                            }
-                            const resultOfParentFunction = parentFunction()
-                            console.log(resultOfParentFunction) 
-                            //() => {
-                            //    console.log(`The number of the greatest hockey player is ${num}`)
-                            //}
-                            resultOfParentFunction() //The number of the greatest hockey player is 99
-                        </code>
-                    </pre>
-                    <p>
-                        The above example first initializes parentFunction, and inside sets a variable "num". Then childFunction 
-                        is initialized and set as the return value of parent function. As a side note, notice how childFunction 
-                        is not returned as a call, childFunction(), but instead just the variable is returned. Next, the result 
-                        of calling parentFunction is stored in resultOfParentFunction, and that is logged. What will be shown in 
-                        console is shown below in comments. Next, resultOfParentFunction is called, and since its body contains 
-                        a console.log, "The number of the greatest hockey player is 99" is printed.
-                    </p>
-                    <p>
-                        The above example also shows a great way of achieving private variables as the only way to access the 
-                        variable num is through calling resultOfParentFunction.
-                    </p>
-                    <p>
-        
-                    </p>
-                    <p>Great References:</p>
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=1S8SBDhA7HA">Dave Gray's Youtube Channel</a></li>
-                        <li><a href="https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4">Prashant Ram's Medium Article</a></li>
-                        
-                    </ul>
-                </div>    
-            </article>
-            <article id="Currying" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <div class="item-container">
-                    <h2>Currying</h2>
-                    <p>Curring is the action of making a function that normally accepts many parameters into one that only accepts 
-                        a single parameter at a time while still being able to use multiple parameters. The easiest way to see this 
-                        is through a mathematical expression:
+                                const resultOfParentFunction = parentFunction()
+                                console.log(resultOfParentFunction) 
+                                //() => {
+                                //    console.log(`The number of the greatest hockey player is ${num}`)
+                                //}
+                                resultOfParentFunction() //The number of the greatest hockey player is 99
+                            </code>
+                        </pre>
+                        <p>
+                            The above example first initializes parentFunction, and inside sets a variable "num". Then childFunction 
+                            is initialized and set as the return value of parent function. As a side note, notice how childFunction 
+                            is not returned as a call, childFunction(), but instead just the variable is returned. Next, the result 
+                            of calling parentFunction is stored in resultOfParentFunction, and that is logged. What will be shown in 
+                            console is shown below in comments. Next, resultOfParentFunction is called, and since its body contains 
+                            a console.log, "The number of the greatest hockey player is 99" is printed.
+                        </p>
+                        <p>
+                            The above example also shows a great way of achieving private variables as the only way to access the 
+                            variable num is through calling resultOfParentFunction.
+                        </p>
+                        <p>
+            
+                        </p>
+                        <p>Great References:</p>
+                        <ul>
+                            <li><a href="https://www.youtube.com/watch?v=1S8SBDhA7HA">Dave Gray's Youtube Channel</a></li>
+                            <li><a href="https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4">Prashant Ram's Medium Article</a></li>
+                            
+                        </ul>
+                    </div>    
+                </article>
+                <article id="Currying" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>Currying</h2>
+                        <p>Curring is the action of making a function that normally accepts many parameters into one that only accepts 
+                            a single parameter at a time while still being able to use multiple parameters. The easiest way to see this 
+                            is through a mathematical expression:
 
-                            x = f(a, b, c) --> x =f(a)(b)(c)
+                                x = f(a, b, c) --> x =f(a)(b)(c)
 
-                        In programming terms this can be shown as :
+                            In programming terms this can be shown as :
 
-                            const curriedFunction = (a, b, c) => {...} --> const curriedFunction = a => b => c => {...}
+                                const curriedFunction = (a, b, c) => {...} --> const curriedFunction = a => b => c => {...}
 
-                            curriedFunction(a, b, c) --> curriedFunction(a)(b)(c)
-                        
-                        In the function definition, it shows that each time it is called it returns a new function that expects the 
-                        next argument inline. When curriedFunction(a) is called, the return value is a partially applied function. 
+                                curriedFunction(a, b, c) --> curriedFunction(a)(b)(c)
+                            
+                            In the function definition, it shows that each time it is called it returns a new function that expects the 
+                            next argument inline. When curriedFunction(a) is called, the return value is a partially applied function. 
 
-                    </p>
-                </div>    
-            </article>
-            <article id="Callback Function/Promises/Async-Await" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <h2>Callback Functions/Promises/Async-Await</h2>
-                <h3>No work done</h3>
-            </article>
-            <article id="Nullish Coalescing" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <h2>Nullish Coalescing</h2>
-                <h3>No work done</h3>
-            </article>
-            <article id="Responsive Websites" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <h2>Responsive Websites</h2>
-                <h3>No work done</h3>
-            </article>
-            <article id="Accessabillity" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                <h2>Accessabillity "a11y"</h2>
-                <h3>No work done</h3>
-            </article>
-        </div>    
-    </main>
+                        </p>
+                    </div>    
+                </article>
+                <article id="Callback-Functions-Promises-Async-Await" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <h2>Callback Functions/Promises/Async-Await</h2>
+                    <h3>No work done</h3>
+                </article>
+                <article id="Nullish-Coalescing" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <h2>Nullish Coalescing</h2>
+                    <h3>No work done</h3>
+                </article>
+                <article id="Responsive-Websites" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <h2>Responsive Websites</h2>
+                    <h3>No work done</h3>
+                </article>
+                <article id="Accessabillity" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <h2>Accessabillity "a11y"</h2>
+                    <h3>No work done</h3>
+                </article>
+                <article id="Psuedo-Elements-CSS" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>CSS Psuedo Elements</h2>
+                        <h3>No work done</h3>
+                    </div>    
+                </article>
+            </div>    
+        </main>
+    </div>  
 </body>
 </html>

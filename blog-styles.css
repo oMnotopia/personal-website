@@ -1,4 +1,4 @@
-/* Universal Styles */
+    /* Universal Styles */
 
 html {
     font-family: 'PT Sans';
@@ -8,6 +8,11 @@ html {
 
 body {
     margin: 0;
+}
+
+main {
+    text-align: center;
+    width: 100%;
 }
   
 .center {
@@ -21,7 +26,7 @@ body {
 }
 
 
-/* Header Styles */
+    /* Header Styles */
 .content a {
     text-decoration: none;
     font-size: 1.5rem;
@@ -43,7 +48,7 @@ header .logo {
     flex: 1;
 }
   
-header nav ul {
+header .siteNav {
     display: flex;
 }
   
@@ -59,16 +64,15 @@ nav a {
 }
 
 header .icon {
-
     width: 3rem;
 }
 
-header .mobile {
-    display: none;  
+@media only screen and (max-device-width: 768px) {
+    
 }
 
 
-/* Body Styles */
+    /* Body Styles */
 
 #blog-container {
     width: 75%;
@@ -133,7 +137,7 @@ pre code {
     justify-content: left;
 }
 
-/* Hoisting */
+    /* Hoisting */
 
 #hoisting {
     transition: max-height 1.0s ease-out;
@@ -145,23 +149,23 @@ pre code {
     margin: auto;
 }
 
-/* Closure */
+     Closure */
 
 .closure-exp {
     text-align: start;
     
 }
 
-/* Collapsable Content */
-/* Style the topics as they are hovered over */
+    /* Collapsable Content */
+    /* Style the topics as they are hovered over */
 
 .collapsible:hover {
     background-color: #ccc;
     cursor: pointer;
   }
 
-/* Search Bar */
-/* Style the search bar */
+    /* Search Bar */
+    /* Style the search bar */
 
 #search-container {
     width:100%;
@@ -172,4 +176,86 @@ pre code {
     height: 1.5rem;
     width: 25%;
     margin: 0.75rem;
+}
+
+/* Theme Toggle Switch Styles */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    bottom: 0;
+}
+    
+    /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+    /* The slider */
+#slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    transition: .4s;
+    }
+
+    /* Generates square that slides */
+#slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #578CA9;
+    transition: .4s;
+}
+
+input:checked + #slider {
+    background-color: #FFF;
+}
+
+input:focus + #slider {
+    box-shadow: 0 0 1px #000000;
+}
+
+input:checked + #slider::before {
+    transform: translateX(26px);
+}
+
+    /* Dark Universal Styles */
+
+#theme.dark {
+    background-color: #000;
+    color: #FFF;
+}
+
+    /* Dark Header Styles */
+
+#theme.dark header {
+    border-bottom: solid 1px #c6c1c1;
+    background-color: #1b1b1b; 
+}
+
+  /* Dark Main Styles */
+
+#theme.dark article {
+    background-color: #272727;
+}
+
+#theme.dark p {
+    color: #b3b9c5
+}
+
+#theme.dark #searchInput {
+    background-color: #272727;
+    color: #FFF;
 }
