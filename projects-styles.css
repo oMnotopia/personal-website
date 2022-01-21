@@ -28,8 +28,12 @@ main {
     /* Header Styles*/
 
 .content a {
-    text-decoration: none;
     font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #4a4a4a
 }
 
 header {
@@ -139,13 +143,14 @@ header .icon {
 }
 
 .item-container { 
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin: auto;
     border-radius: 1rem;
 }
 
 .info-container {
+    height: 100%;
     border: 1px solid black;
     border-radius: 1rem;
 }
@@ -171,7 +176,6 @@ header .icon {
 .item-container p {
     padding: 0.75rem 1rem;
     margin: 0;
-    color:#000;
 }
     
 @media only screen and (max-device-width: 768px) {
@@ -259,14 +263,18 @@ input:checked + #slider::before {
     
 #theme.dark header {
     border-bottom: solid 1px #c6c1c1;
-    background-color: #1b1b1b; 
+    background-color: #1f1d1f; 
 }
 
-    /* Dark Game Styles */
+    /* Dark Project Styles  */
 
-#theme.dark a { 
-    color: #FFF;
+#theme.dark .project-item {
+    background-color: #1f1d1f;
 }
-    
+
+#theme.dark .text-container {
+    background-color: #1f1d1f;
+}
+
 
     

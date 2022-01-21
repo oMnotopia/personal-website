@@ -15,14 +15,14 @@ const closedDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/r
 //Vars for javascript interactivity
 let numClosedDoors = 0; //starts with a blank setup, no doors
 let numberOfRobots = 1;
-let maxNumOfDoors = 8; //max number of doors a user can have on screen, works up to large numbers
+let maxNumOfDoors = 8; //max number of doors a user can have on screen, works with large numbers if desired
 let minNumOfDoors = 2; //minimum number of doors
 let userInputOfDoors;
 let storedUserInputofDoors; 
 let currentlyPlaying = false;
 let currentWinCounter = 0;
 let bestWinCounter = 0;
-let regex = /(?<!.)[0-9](?!.)/;//no character can come before a digit 0-9 or afterwards
+let regex = /(?<!.)[0-9](?!.)/;//no character can come before a digit, 0-9, or afterwards
 
 //Functions
 //Checks to see if the user has opened a door with the robot.
@@ -35,7 +35,9 @@ const isClicked = door => {
     return (door.src===closedDoorPath) ? false:true;
 }
 
-//Reduces numClosedDoors every time a door is clicked so when it hits 0 there is a winner.
+//Reduces numClosedDoors every time a door is clicked, If variable reaches 0, game over with win condition called.
+//Otherwise, if the robot is not hiding behind the last door and is clicked, game over with lose condition called.
+
 const playDoor = door => {
     numClosedDoors--;
     if(numClosedDoors===0) {
@@ -108,7 +110,7 @@ const gameOver = status => {
         }
         bestScore.innerHTML = bestWinCounter;
         currentScore.innerHTML = currentWinCounter;
-        startButton.innerHTML = 'You win! Play again?'
+        startButton.innerHTML = 'You win! Play again?';  
     }else if(status==='lose'){
         currentWinCounter = 0;
         currentScore.innerHTML = currentWinCounter;

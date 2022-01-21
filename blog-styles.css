@@ -13,11 +13,17 @@ body {
 main {
     text-align: center;
     width: 100%;
+    background-color: #578CA9;
 }
 
+article:hover {
+    background-color: #ccc;
+    cursor: pointer;
+} 
+
 #theme {
-    background-color: #98c235;
     height: 100%;
+    background-color: #578CA9;
 }
   
 .center {
@@ -32,6 +38,8 @@ main {
 
 
     /* Header Styles */
+
+
 .content a {
     text-decoration: none;
     font-size: 1.5rem;
@@ -138,6 +146,10 @@ pre code {
     padding: 20px;
 }
 
+article li {
+    text-align: start;
+}
+
 #text {
     justify-content: left;
 }
@@ -154,20 +166,12 @@ pre code {
     margin: auto;
 }
 
-     Closure */
+    /* Closure */
 
 .closure-exp {
     text-align: start;
     
 }
-
-    /* Collapsable Content */
-    /* Style the topics as they are hovered over */
-
-.collapsible:hover {
-    background-color: #ccc;
-    cursor: pointer;
-  }
 
     /* Search Bar */
     /* Style the search bar */
@@ -178,7 +182,7 @@ pre code {
 }
 
 #searchInput {
-    height: 1.5rem;
+    height: 2rem;
     width: 25%;
     margin: 0.75rem;
 }
@@ -187,7 +191,7 @@ pre code {
 /* The switch - the box around the slider */
 .switch {
     position: relative;
-    display: inline-block;
+    display: block; /* If this is inline-block like other headers, display spot is wrong*/
     width: 60px;
     height: 34px;
     bottom: 0;
@@ -239,8 +243,8 @@ input:checked + #slider::before {
     /* Dark Universal Styles */
 
 #theme.dark {
+    color: #4a4a4a;
     background-color: #000;
-    color: #FFF;
 }
 
     /* Dark Header Styles */
@@ -252,12 +256,20 @@ input:checked + #slider::before {
 
   /* Dark Main Styles */
 
+#theme.dark main {
+    background-color: #000;
+}
+
 #theme.dark article {
     background-color: #272727;
 }
 
 #theme.dark p {
-    color: #b3b9c5
+    color: #b3b9c5;
+}
+
+#theme.dark li {
+    color: #b3b9c5;
 }
 
 #theme.dark #searchInput {

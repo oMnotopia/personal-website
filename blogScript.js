@@ -1,5 +1,4 @@
 //onclick called from inline html, enlarges blog item when clicked and shrinks when clicked again
-const hoistingId = document.getElementById('hoisting')
 const blogItem = document.querySelectorAll('.blog-item')
 
 //Loop sets an event listener on each blog item.
@@ -17,4 +16,7 @@ function enlargeBlogItem(element) {
         element.style.height = origSize;
     }
 }
+
+
+
 
