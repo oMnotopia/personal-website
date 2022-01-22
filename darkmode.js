@@ -13,13 +13,36 @@ const greenC = document.getElementById('green')
 const pinkC = document.getElementById('pink')
 const blueC = document.getElementById('blue')
 
+//Looks at if the user has dark mode set as default for their browser.
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+
+const currentTheme = localStorage.getItem("theme");
+
+//Contrast values for "Accessability" blog.
+const darkModeContrastValues = () => {
+    yellowC.innerHTML = "13.91:1"
+    greenC.innerHTML = "10.88:1"
+    pinkC.innerHTML = "6.95:1"
+    blueC.innerHTML = "1.73:1"
+}
+
+if (currentTheme == "dark") {
+  theme.className = "dark";
+  githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header 
+  if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
+  if(yellowC||greenC||pinkC||blueC) darkModeContrastValues()
+}
 
 //Event listener from click. Event handler looks at the class name and changes between dark and light.
 sliderMode.addEventListener('click', () => {
+
+    console.log(localStorage)
+
     if(theme.className==='light'){
         theme.className = 'dark';
-        githubLogo[0].src = "./resources/github-dark-logo.png";
-        if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png";
+        githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header
+        if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
         
 
         //Remove event listener so contrast values don't change when mouse is over blog item. 
@@ -46,16 +69,14 @@ sliderMode.addEventListener('click', () => {
             accessabillity.addEventListener('mouseleave', handleMouseLeave)    
         }
     }
+
+    //Stores theme in local storage so on a page switch theme is remembered.
+    localStorage.setItem("theme", theme.className);
+
 })
 
 
-//Contrast values for "Accessability" blog.
-const darkModeContrastValues = () => {
-    yellowC.innerHTML = "13.91:1"
-    greenC.innerHTML = "10.88:1"
-    pinkC.innerHTML = "6.95:1"
-    blueC.innerHTML = "1.73:1"
-}
+
 const handleMouseEnter = () => {
     yellowC.innerHTML = "1.49:1"
     greenC.innerHTML = "1.17:1"
@@ -70,10 +91,19 @@ const handleMouseLeave = () => {
 }
 
 //Event listeners that change contrast ratio values for accessability blog.
-
 if(accessabillity){
     accessabillity.addEventListener('mouseenter', handleMouseEnter)
     accessabillity.addEventListener('mouseleave', handleMouseLeave)   
 }
 
+// const btn = document.querySelector(".btn-toggle");
+// const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// btn.addEventListener("click", function () {
+//   if (prefersDarkScheme.matches) {
+//     document.body.classList.toggle("light-theme");
+//   } else {
+//     document.body.classList.toggle("dark-theme");
+//   }
+// });
 
