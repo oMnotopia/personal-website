@@ -80,9 +80,45 @@ header .icon {
     width: 3rem;
 }
 
-@media only screen and (max-device-width: 768px) {
+    /* Tablet Styling */
     
-}
+    @media only screen and (max-device-width: 768px) {
+        .logo {
+            display: none;
+        }
+    
+        header {
+            display: block;
+            width: 100%;
+        }
+    
+        header .content {
+            padding-left: 0;
+            padding-right: 0; 
+            width: 100%;
+        }
+    
+        nav {
+            width: 100%;
+        }
+    
+    
+        ul {
+            padding: 0;
+            justify-content: space-around;
+        }
+    
+        .content li {
+            padding: 0;
+        }
+    }
+        
+        /* Phone Styling */
+        
+    @media only screen and (max-device-width: 425px) {
+        
+    
+    }
 
 
     /* Body Styles */
@@ -254,6 +290,10 @@ input:checked + #slider::before {
     background-color: #1b1b1b; 
 }
 
+#theme.dark a {
+    color: #FFF;
+}
+
   /* Dark Main Styles */
 
 #theme.dark main {
@@ -264,15 +304,13 @@ input:checked + #slider::before {
     background-color: #272727;
 }
 
-#theme.dark p {
-    color: #b3b9c5;
-}
 
-#theme.dark li {
+
+#theme.dark .item-container {
     color: #b3b9c5;
 }
 
 #theme.dark #searchInput {
     background-color: #272727;
-    color: #FFF;
+    color: #b3b9c5;
 }

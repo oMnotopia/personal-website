@@ -15,7 +15,7 @@ const blueC = document.getElementById('blue')
 
 //Looks at if the user has dark mode set as default for their browser.
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
+console.log(prefersDarkScheme)
 
 const currentTheme = localStorage.getItem("theme");
 
@@ -27,16 +27,26 @@ const darkModeContrastValues = () => {
     blueC.innerHTML = "1.73:1"
 }
 
-if (currentTheme == "dark") {
-  theme.className = "dark";
-  githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header 
-  if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
-  if(yellowC||greenC||pinkC||blueC) darkModeContrastValues()
+if(prefersDarkScheme) {
+    theme.className = "dark";
+    githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header 
+    if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
+    if(yellowC||greenC||pinkC||blueC) darkModeContrastValues()
+}
+if (currentTheme === "dark") {
+    theme.className = "dark";
+    githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header 
+    if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
+    if(yellowC||greenC||pinkC||blueC) darkModeContrastValues()
+} else {
+    theme.className = "light";
+    githubLogo[0].src = "./resources/github-logo.png"; //logo in header 
+    if(githubLogo[1]) githubLogo[1].src = "./resources/github-logo.png"; // logo in projects section  
 }
 
 //Event listener from click. Event handler looks at the class name and changes between dark and light.
 sliderMode.addEventListener('click', () => {
-
+    console.log(prefersDarkScheme)
     console.log(localStorage)
 
     if(theme.className==='light'){

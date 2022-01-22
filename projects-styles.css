@@ -25,9 +25,16 @@ main {
     text-align: center;
 }
 
+.button {
+    border-radius: 4px;
+    background-color: #4a4a4a;
+    color: white;
+}
+
     /* Header Styles*/
 
 .content a {
+    text-decoration: none;
     font-size: 1.5rem;
 }
 
@@ -103,14 +110,31 @@ header .icon {
     .content li {
         padding: 0;
     }
+
+    #projects {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: auto;
+        width: 80%;    
+    }
 }
     
     /* Phone Styling */
     
 @media only screen and (max-device-width: 425px) {
-    
+    #projects {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: auto;
+        width: 75%;    
+    }
 
 }
+
     
     /* Body Styles */
     /* Body Styles - Projects */
@@ -178,28 +202,6 @@ header .icon {
     margin: 0;
 }
     
-@media only screen and (max-device-width: 768px) {
-    #projects {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        margin: auto;
-        width: 80%;    
-    }
-}
-
-@media only screen and (max-device-width: 425px) {
-    #projects {
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin: auto;
-        width: 75%;    
-    }
-}
-    
     /* Theme Toggle Switch Styles */
     /* The switch - the box around the slider */
 .switch {
@@ -255,15 +257,19 @@ input:checked + #slider::before {
     /* Dark Universal Styles */
 
 #theme.dark {
+    color: #4a4a4a;
     background-color: #000;
-    color: #FFF;
 }
     
     /* Dark Header Styles */
     
 #theme.dark header {
     border-bottom: solid 1px #c6c1c1;
-    background-color: #1f1d1f; 
+    background-color: #1b1b1b; 
+}
+
+#theme.dark a {
+    color: #FFF;
 }
 
     /* Dark Project Styles  */
@@ -273,6 +279,7 @@ input:checked + #slider::before {
 }
 
 #theme.dark .text-container {
+    color: #b3b9c5;
     background-color: #1f1d1f;
 }
 
