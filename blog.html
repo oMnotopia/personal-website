@@ -39,6 +39,148 @@
                 <input type="text" id="searchInput" placeholder="Search topics...">
             </div>
             <div id="blog-container">
+
+                <article id="accessabillity" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                    <div class="item-container">
+                        <h2>Accessabillity "a11y"</h2>
+                        <p>Accessability can be best learned by studying the Web Content Accessability Guidelines 
+                            (WCAG). The WCAG is developed by W3C in cooperation with individuals and organizations, 
+                            with the goal of providing a single shared standard for web content accessability that 
+                            meets the needs of individuals, organizations, and governments internationally. 
+                            WCAG 2 has gone through two current iterations and is set to have the third edition released in 
+                            2021, although that looks like it will be pushed to 2022. Each iteration builds 
+                            upon the previous and no part changes or replaces and of the previous versions.
+                            Accessability allows for everyone to be able to use a website and there are many ways developers 
+                            can make a website accessable. 
+                        </p>    
+                        <h3>Contrast & Colours</h3>   
+                        <p>
+                            First I will talk about contrast and colours. Users with 
+                            visual disabilities, must be able to perceive the content on a web page, and the 
+                            contrast defines how easily it is to tell one colour from another. The contrast ratio 
+                            is a range between 1:1 (white on white) to 21:1 (black on white). For example:
+                        </p>
+                        <ul>
+                            <li>Yellow (#FFFF00) has a contrast of <b id='yellow'>1.07:1</b>. <span style="color:#FFFF00">This is yellow</span> </li>
+                            <li>Green (#00FF00) has a contrast of <b id='green'>1.37:1</b>. <span style="color:#00FF00">This is green</span> </li>
+                            <li>Pink (#FF80FF) has a contrast of <b id='pink'>2.14:1</b>. <span style="color:#FF80FF">This is pink</span> </li>
+                            <li>Blue (#0000FF) has a contrast of <b id='blue'>8.59:1</b>. <span style="color:#0000FF">This is blue</span> </li>   
+                        </ul>
+                        <p>
+                            For a contrast ratio to pass the standards set by the WCAG, it must achieve one of two 
+                            levels. The minimum level, AA, must meet these requirements:
+                        </p> 
+                        <ul>
+                            <li>A contrast ratio of 4.5:1 for text and images of text, except for:</li>
+                            <ul>
+                                <li>Large text of at least 18 point or 14 point bold only need to have a ratio 
+                                    of 3:1.</li>
+                            </ul>
+                        </ul> 
+                        <p>
+                            The enhanced level, AAA, must meet the following requirements:    
+                        </p>   
+                        <ul>
+                            <li>A contrast ratio of 7:1 for text and images of text, except for:</li>
+                            <ul>
+                                <li>Large text of at least 18 point or 14 point bold only need to have a ratio 
+                                    of 4.5:1.
+                                </li>
+                            </ul>
+                        </ul> 
+                        <p>
+                            Some important things to note is that the outline or halo of text can impact the perceived 
+                            contrast. For outlines, the outline colour may be used as the background colour. In the case 
+                            of a halo/glow, it may be used as the background colour. Another thing to note 
+                            is that there are three exceptions to the 4.5:1 ratio minimum:
+                        </p>     
+                        <ul>
+                            <li>Large text which is text 18pt and above or 14pt bold and above.</li>
+                            <li>Incidental text, which has four criteria:</li>
+                            <ul>
+                                <li><b>Inactive</b>: An inactive element, like a disabled submit button, which is indicated 
+                                    by its lower contrast state.
+                                </li>
+                                <li><b>Pure Decoration</b>: Decorative text that is not meant to be read by a user.</li>
+                                <li><b>Not Visible to Anyone</b>: Text that is meant to be hidden, such as an invisible 
+                                    skip link. If this link becomes visible it would be required to meet the standards.
+                                </li>
+                                <li><b>Part of a Image that Contains Significant Other Visual Content</b>: 
+                                    Text that is not an important part of the image, such as a name tag on the shirt 
+                                    of a person in an image.
+                                </li>
+                            </ul>
+                        </ul>
+                        <p>As of WCAG 2.1, contrast requirements have moved beyond text. It now also applies to two 
+                            more components the page. The first is the <b>User Interface Components</b> and the 
+                            visual information associated with them. The second is <b>Graphical Objects</b> and 
+                            parts of graphics required to understand the content.
+                        </p>
+                        <p>
+                            Finally, WCAG 2 does not prohibit the use of any colour or combination of colours. 
+                            But as defined in 1.4.1, a level A requirement prohibits colour alone from being 
+                            used to present meaningful content or instructions. A common example of this is in 
+                            a sign up form, where a field is missed it usually highlihts in red. Highlighting 
+                            the missing field in red with no other indication would not pass the requirement.
+                            Using the red highlight plus an indicator such as text below each missing field, 
+                            noting is has been missed would be suficient. An example of where problems can arise 
+                            is when two seperate columns are indicated only by differing colours, those 
+                            colours may appear to be the same to someone with visual disabilities. So an indicator 
+                            such as a text header for each column would be necessary to pass A level requirements.
+                        </p>
+
+                        <h3>Focus State(Keyboard Accessability)</h3>
+                        <p>
+                            The use of a keyboard to interact with a webpage is done for many reasons. 
+                            Some users with motor disabilities or blindness need it, but others use it 
+                            just out of personal preferance. There are a few main ways that bad practices in 
+                            programming can effect a users experience on a website using a keyboard, they are:
+                                <ul>
+                                    <li>
+                                        Focus Indicators - A user presses the "tab" key to navigate through 
+                                        a web page - links, buttons, text input fields, etc. When an item on the 
+                                        page has been tabbed to, it gains keyboard "focus" and can then be 
+                                        manipulated on the keyboard. A user must be provided with a visual 
+                                        indicator of the element that currently has the keyboard focus. All current 
+                                        web browsers automatically provide visual indicators. The appearance 
+                                        changes from browser to browser but is usually indicated by highlighting 
+                                        of the element. To ensure proper visibility more than just highlighting 
+                                        should be done, things like proper contrast, background colours, and 
+                                        other interactive symbols.
+                                    </li>
+                                    <li>
+                                        Navigation Order - The order in which interactive items receive focus is 
+                                        important to keyboard users because if it is not it will cause the site to 
+                                        be confusing to navigate. This means that the navigation follows the visual 
+                                        flow of the page - left to right, top to bottom. In most pages this means
+                                        header, main navigation, page navigation, and footer.
+                                    </li>
+                                    <li>
+                                        Items That Should Not Receive Keyboard Focus - Elements such as links, 
+                                        buttons, and form controls are natively accessable to keyboard users, so 
+                                        they should be used for interactivity whenver possible. Any page elements 
+                                        that are not interactive should not be made keyboard focusable, as it will 
+                                        cause confusion. One instance of this arises when the attribute 
+                                        tabIndex="0" is used on a div or some other element that has no 
+                                        interactivity.
+                                    </li>
+                                    <li>Inaccessible Custom Widgets - When custom widgets are used steps must be 
+                                        taken to make that widget accessable. Setting the attribute tabIndex="0" 
+                                        on the correct elements and the use of ARIA for screen readers are the main 
+                                        way to do so. The ARIA Authoring Practices outlines keyboard interactions 
+                                        and ARIA code for most custom widgets. For a widget to be highly
+                                    </li>
+                                    <li>Lengthy Navigation - </li>
+                                </ul>
+                           
+                        </p>
+                        <h3>Using labels</h3>
+                        <h3>Alt Tags</h3>
+                        <h3>Developed Correctly - Markups(semantic html, other), Keyboard Navigation</h3>
+                        <h3>ARIA</h3>
+                    </div>
+
+                </article>
                 
                 <article id="hoisting" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                     <div class="item-container">
@@ -46,13 +188,13 @@
                         <p>
                             Hoisting is Javascripts default behaviour, it means that all declarations are moved to the top of
                             the current scope(current script or function). In some situations hoisting can be useful, but you will 
-                            see in examles below that most of the time hoisting is not 
+                            see in the examples below that most of the time hoisting is not 
                             good and can result in errors or unexpected outputs. The simplest way to avoid those 
                             situations is to declare your varables and functions at the top of your javascript programs before 
                             any statements that require or manipulate the information contained within them.
                         </p>
                         <p>
-                            Variables that are defined with <i>let</i> <i>const</i>, or <i>var</i> are hoisted to the top of the scope 
+                            Variables that are defined with <i>let</i>, <i>const</i>, or <i>var</i> are hoisted to the top of the scope 
                             but not initialized. This means that the variable exists in the code but cannot be used until it is 
                             declared. <i>Let</i> differs from <i>const</i> in that if you try to use a <i>let</i> before it is declared 
                             you will get a <i style="color:red">ReferenceError</i>, whereas if <i>const</i> is used before it is 
@@ -182,29 +324,38 @@
                     </div>
                 </article >
 
-                <article id="bubbling" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
+                <article id="bubbling-capturing" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                     <div class="item-container" >
                         <h2>Bubbling & Capture</h2>
                         <p>
-                            Bubbling or Event Bubbling is when multiple events are triggered with methods like, <i>"onclick()"</i> or
-                            <i>"addEventListener()"</i>, with a single action. A simple example is when a user clicks a 
-                            once on an element with an event listener, with a handler of click, that has a parent element behind 
-                            it that also has an event listener. This can best be understood in terms of how the "Document 
-                            Object Model" (DOM) is layed out and how each element fits into the model.
+                            Bubbling and capturing is when multiple events are triggered with methods like, <i>"onclick()"</i> or
+                            <i>"addEventListener()"</i>, with a single action. A simple example is when a user clicks
+                            once on an element that has an associated event listener, that also has a parent element behind 
+                            it with an event listener of the same type.
+                        </p>
+                        <p>
+                            Bubbling or Event Bubbling is the same as capturing except for one key difference which is the order in which
+                            they propogate through the "Document Object Model" (DOM). Bubbling starts at the most nested event and rises 
+                            through the DOM triggering events as it goes. Whereas, capturing start at the highest level event and falls 
+                            down the DOM triggering events as it goes.
                         </p>
                         <figure class="blog-image large">
                             <img src="./resources/blog-bubbling_capturing-resources/example-bubbling.png" alt="Bubbling in the DOM">
                             <figcaption>Bubbling and its path through the DOM</figcaption>
                         </figure>
                         <p>
-                            The image above shows two events that that are being triggered on a grandparent element(div class="project-item") 
-                            and then its grandchild element(a). Both elements need to be triggered by the same <i>event</i>, in our case it 
-                            could be a "click". When the anchor element(&lt;a&gt;) is clicked the event listener on the anchor will trigger, 
+                            The image above shows two events that that are being triggered on a grandparent element &lt;div class="project-item"&gt;
+                            and then its grandchild element &lt;a&gt;. Both elements are triggered by the same <i>event</i>, in our case it 
+                            is a "click". When the anchor element &lt;a&gt; is clicked the event listener on the anchor will trigger, 
                             but it will also trigger the grandparent element, "project-item". This is what bubbling is, think of it as when
                             a bubble forms below the surface, it rises up through the water until it reaches the top. In this case our bubble 
-                            just happens to be triggering all the even listeners on elements above what was clicked. An important detail  to 
+                            just happens to be triggering all the event listeners on elements above what was clicked. An important detail  to 
                             understand is that if bubbling is set and the div "project-item" is clicked it won't trigger the anchor elements 
                             event listener.
+                        </p>
+                        <p>
+                            Capturing works the same as above except instead of going from the most nested object and rising it starts at the 
+                            highest level element and goes down through the elements.
                         </p>
                     </div>
                 </article>
@@ -399,147 +550,7 @@
                     </div>
                 </article>
                 
-                <article id="accessabillity" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
-                    <div class="item-container">
-                        <h2>Accessabillity "a11y"</h2>
-                        <p>Accessability can be best learned by studying the Web Content Accessability Guidelines 
-                            (WCAG). The WCAG is developed by W3C in cooperation with individuals and organizations, 
-                            with the goal of providing a single shared standard for web content accessability that 
-                            meets the needs of individuals, organizations, and governments internationally. 
-                            WCAG 2 has gone through two current iterations and is set to have the third released in 
-                            2021, although that looks like it will be pushed to 2022. Each iteration simply builds 
-                            upon the previous and no part changes or replaces and of the previous versions.
-                            Accessability allows for everyone to be able to use a website and there are many ways someone 
-                            can make a website accessable. 
-                        </p>    
-                        <h3>Contrast & Colours</h3>   
-                        <p>
-                            First I will talk about colours and contrasts. Users with 
-                            visual disabilities, must be able to perceive the content on a web page, and the 
-                            contrast defines how easily it is to tell one colour from another. The contrast ratio 
-                            is a range between 1:1 (white on white) to 21:1 (black on white). For example:
-                        </p>
-                        <ul>
-                            <li>Yellow (#FFFF00) has a contrast of <b id='yellow'>1.07:1</b>. <span style="color:#FFFF00">This is yellow</span> </li>
-                            <li>Green (#00FF00) has a contrast of <b id='green'>1.37:1</b>. <span style="color:#00FF00">This is green</span> </li>
-                            <li>Pink (#FF80FF) has a contrast of <b id='pink'>2.14:1</b>. <span style="color:#FF80FF">This is pink</span> </li>
-                            <li>Blue (#0000FF) has a contrast of <b id='blue'>8.59:1</b>. <span style="color:#0000FF">This is blue</span> </li>   
-                        </ul>
-                        <p>
-                            For a contrast ratio to pass the standards set by the WCAG, it must achieve one of two 
-                            levels. The minimum level, AA, must meet these requirements:
-                        </p> 
-                        <ul>
-                            <li>A contrast ratio of 4.5:1 for text and images of text, except for:</li>
-                            <ul>
-                                <li>Large text of at least 18 point or 14 point bold only need to have a ratio 
-                                    of 3:1.</li>
-                            </ul>
-                        </ul> 
-                        <p>
-                            The enhanced level, AAA, must meet the following requirements:    
-                        </p>   
-                        <ul>
-                            <li>A contrast ratio of 7:1 for text and images of text, except for:</li>
-                            <ul>
-                                <li>Large text of at least 18 point or 14 point bold only need to have a ratio 
-                                    of 4.5:1.
-                                </li>
-                            </ul>
-                        </ul> 
-                        <p>
-                            Some important things to note is that the outline or halo of text can impact the perceived 
-                            contrast. For outlines, the outline colour may be used as the background colour. In the case 
-                            of a halo/glow, it may be used as the background colour. Another thing to note 
-                            is that there are three exceptions to the 4.5:1 ratio minimum:
-                        </p>     
-                        <ul>
-                            <li>Large text which is text 18pt and above or 14pt bold and above.</li>
-                            <li>Incidental text, which has four criteria:</li>
-                            <ul>
-                                <li><b>Inactive</b>: An inactive element, like a disabled submit button, which is indicated 
-                                    by its lower contrast state.
-                                </li>
-                                <li><b>Pure Decoration</b>: Decorative text that is not meant to be read by a user.</li>
-                                <li><b>Not Visible to Anyone</b>: Text that is meant to be hidden, such as an invisible 
-                                    skip link. If this link becomes visible it would be required to meet the standards.
-                                </li>
-                                <li><b>Part of a Image that Contains Significant Other Visual Content</b>: 
-                                    Text that is not an important part of the image, such as a name tag on the shirt 
-                                    of a person in an image.
-                                </li>
-                            </ul>
-                        </ul>
-                        <p>As of WCAG 2.1, contrast requirements have moved beyond text. It now also applies to two 
-                            more components the page. The first is the <b>User Interface Components</b> and the 
-                            visual information associated with them. The second is <b>Graphical Objects</b> and 
-                            parts of graphics required to understand the content.
-                        </p>
-                        <p>
-                            Finally, WCAG 2 does not prohibit the use of any colour or combination of colours. 
-                            But as defined in 1.4.1, a level A requirement prohibits colour alone from being 
-                            used to present meaningful content or instructions. A common example of this is in 
-                            a sign up form, where a field is missed it usually highlihts in red. Highlighting 
-                            the missing field in red with no other indication would not pass the requirement.
-                            Using the red highlight plus an indicator such as text below each missing field, 
-                            noting is has been missed would be suficient. An example of where problems can arise 
-                            is when two seperate columns are indicated only by differing colours, those 
-                            colours may appear to be the same to someone with visual disabilities. So an indicator 
-                            such as a text header for each column would be necessary to pass A level requirements.
-                        </p>
-
-                        <h3>Focus State(Keyboard Accessability)</h3>
-                        <p>
-                            The use of a keyboard to interact with a webpage is done for many reasons. 
-                            Some users with motor disabilities or blindness need it, but others use it 
-                            just out of personal preferance. There are a few main ways that bad practices in 
-                            programming can effect a users experience on a website using a keyboard, they are:
-                                <ul>
-                                    <li>
-                                        Focus Indicators - A user presses the "tab" key to navigate through 
-                                        a web page - links, buttons, text input fields, etc. When an item on the 
-                                        page has been tabbed to, it gains keyboard "focus" and can then be 
-                                        manipulated on the keyboard. A user must be provided with a visual 
-                                        indicator of the element that currently has the keyboard focus. All current 
-                                        web browsers automatically provide visual indicators. The appearance 
-                                        changes from browser to browser but is usually indicated by highlighting 
-                                        of the element. To ensure proper visibility more than just highlighting 
-                                        should be done, things like proper contrast, background colours, and 
-                                        other interactive symbols.
-                                    </li>
-                                    <li>
-                                        Navigation Order - The order in which interactive items receive focus is 
-                                        important to keyboard users because if it is not it will cause the site to 
-                                        be confusing to navigate. This means that the navigation follows the visual 
-                                        flow of the page - left to right, top to bottom. In most pages this means
-                                        header, main navigation, page navigation, and footer.
-                                    </li>
-                                    <li>
-                                        Items That Should Not Receive Keyboard Focus - Elements such as links, 
-                                        buttons, and form controls are natively accessable to keyboard users, so 
-                                        they should be used for interactivity whenver possible. Any page elements 
-                                        that are not interactive should not be made keyboard focusable, as it will 
-                                        cause confusion. One instance of this arises when the attribute 
-                                        tabIndex="0" is used on a div or some other element that has no 
-                                        interactivity.
-                                    </li>
-                                    <li>Inaccessible Custom Widgets - When custom widgets are used steps must be 
-                                        taken to make that widget accessable. Setting the attribute tabIndex="0" 
-                                        on the correct elements and the use of ARIA for screen readers are the main 
-                                        way to do so. The ARIA Authoring Practices outlines keyboard interactions 
-                                        and ARIA code for most custom widgets. For a widget to be highly
-                                    </li>
-                                    <li>Lengthy Navigation - </li>
-                                </ul>
-                           
-                        </p>
-                        <h3>Using labels</h3>
-                        <h3>Alt Tags</h3>
-                        <h3>Developed Correctly - Markups(semantic html, other), Keyboard Navigation</h3>
-                        <h3>ARIA</h3>
-                    </div>
-
-                </article>
+               
                 
                 <article id="Psuedo-Elements-CSS" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                     <div class="item-container">
