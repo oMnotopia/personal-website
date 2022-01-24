@@ -15,8 +15,7 @@ const blueC = document.getElementById('blue')
 
 //Looks at if the user has dark mode set as default for their browser.
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-console.log(prefersDarkScheme)
-
+//Gets theme stored in local storage if the user has set a preference before.
 const currentTheme = localStorage.getItem("theme");
 
 //Contrast values for "Accessability" blog.
@@ -46,8 +45,6 @@ if (currentTheme === "dark") {
 
 //Event listener from click. Event handler looks at the class name and changes between dark and light.
 sliderMode.addEventListener('click', () => {
-    console.log(prefersDarkScheme)
-    console.log(localStorage)
 
     if(theme.className==='light'){
         theme.className = 'dark';

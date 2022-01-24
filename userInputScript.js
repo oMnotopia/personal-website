@@ -7,10 +7,10 @@ const submitBtn = document.getElementById('btn')
 const doorParentID = document.getElementById('door-rows')
 
 //Vars for image paths
-const botDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/resources/robot.png"
-const beachDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/resources/beach.png"
-const spaceDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/resources/space.png"
-const closedDoorPath = "file:///C:/Users/persi/JavascriptProjects/CC-ChoreDoor/resources/closed_door.png"
+const botDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/robot.svg'
+const beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg'
+const spaceDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg'
+const closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg'
 
 //Vars for javascript interactivity
 let numClosedDoors = 0; //starts with a blank setup, no doors
@@ -32,12 +32,12 @@ const isBot = door => {
 
 //Makes sure each door is only clickable once.
 const isClicked = door => {
+    console.log(door.src)
     return (door.src===closedDoorPath) ? false:true;
 }
 
 //Reduces numClosedDoors every time a door is clicked, If variable reaches 0, game over with win condition called.
 //Otherwise, if the robot is not hiding behind the last door and is clicked, game over with lose condition called.
-
 const playDoor = door => {
     numClosedDoors--;
     if(numClosedDoors===0) {
@@ -51,6 +51,8 @@ const playDoor = door => {
 const randomChoreDoorGenerator = () => {
     submitBtn.style.display = 'none'//Hide submit button (redisplays when new round is started)
     //If only one door left assign robot
+    console.log(spaceDoorPath)
+    console.log(botDoorPath)
     if ((numberOfRobots===numClosedDoors)&&(numberOfRobots!==0)) {
         return botDoorPath;
     } else { //assign either space door or robot, more doors = lower chance of robot.
@@ -88,7 +90,8 @@ const startRound = () => {
     //Getting door image nodes and turning them into an array for manipulation.
     let childOfDoors = doorParentID.childNodes;
     let ChildOfDoorsArray = Array.from(childOfDoors)
-    //Resets doors to blank and reassigns event listeners based off previous number of doors.
+    //Resets doors to blank and reassigns event listeners based off previous number of doors.\
+    console.log(ChildOfDoorsArray)
     ChildOfDoorsArray.forEach(element => {
         element.setAttribute("src", closedDoorPath) 
         element.addEventListener('click', () => {
@@ -157,12 +160,16 @@ function howManyDoors(ev) {
 
             let newDoor = document.createElement("img")
             let newDoorNumber = doorParentID.appendChild(newDoor)
-
+            console.log(newDoor)
+            console.log(newDoorNumber)
             newDoorNumber.setAttribute("id", "door"+newDoorID)
             newDoorNumber.setAttribute("class", "door-frame")
             newDoorNumber.setAttribute("src", closedDoorPath)
             newDoorNumber.addEventListener('click', () => {
+                console.log(isClicked(newDoorNumber))
+                console.log(newDoorNumber.src)
                 if((isClicked(newDoorNumber)===false)&&(currentlyPlaying===true)) {
+                    console.log('hey')
                     newDoorNumber.src = randomChoreDoorGenerator(addOrSubtractDoors);
                     playDoor(newDoorNumber);     
                 }
