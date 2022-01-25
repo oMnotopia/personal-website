@@ -8,7 +8,7 @@ const doorParentID = document.getElementById('door-rows')
 
 //Vars for image paths
 const botDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/robot.svg'
-const beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg'
+//const beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg'
 const spaceDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg'
 const closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg'
 
@@ -32,7 +32,6 @@ const isBot = door => {
 
 //Makes sure each door is only clickable once.
 const isClicked = door => {
-    console.log(door.src)
     return (door.src===closedDoorPath) ? false:true;
 }
 
@@ -51,8 +50,6 @@ const playDoor = door => {
 const randomChoreDoorGenerator = () => {
     submitBtn.style.display = 'none'//Hide submit button (redisplays when new round is started)
     //If only one door left assign robot
-    console.log(spaceDoorPath)
-    console.log(botDoorPath)
     if ((numberOfRobots===numClosedDoors)&&(numberOfRobots!==0)) {
         return botDoorPath;
     } else { //assign either space door or robot, more doors = lower chance of robot.
@@ -91,7 +88,6 @@ const startRound = () => {
     let childOfDoors = doorParentID.childNodes;
     let ChildOfDoorsArray = Array.from(childOfDoors)
     //Resets doors to blank and reassigns event listeners based off previous number of doors.\
-    console.log(ChildOfDoorsArray)
     ChildOfDoorsArray.forEach(element => {
         element.setAttribute("src", closedDoorPath) 
         element.addEventListener('click', () => {
@@ -160,17 +156,13 @@ function howManyDoors(ev) {
 
             let newDoor = document.createElement("img")
             let newDoorNumber = doorParentID.appendChild(newDoor)
-            console.log(newDoor)
-            console.log(newDoorNumber)
             newDoorNumber.setAttribute("id", "door"+newDoorID)
             newDoorNumber.setAttribute("class", "door-frame")
             newDoorNumber.setAttribute("src", closedDoorPath)
             newDoorNumber.addEventListener('click', () => {
-                console.log(isClicked(newDoorNumber))
-                console.log(newDoorNumber.src)
                 if((isClicked(newDoorNumber)===false)&&(currentlyPlaying===true)) {
-                    console.log('hey')
-                    newDoorNumber.src = randomChoreDoorGenerator(addOrSubtractDoors);
+                    newDoorNumber.setAttribute("src", randomChoreDoorGenerator(addOrSubtractDoors))
+                    //newDoorNumber.src = randomChoreDoorGenerator(addOrSubtractDoors);
                     playDoor(newDoorNumber);     
                 }
             })

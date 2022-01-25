@@ -7,12 +7,14 @@
     <title>oMnotopia's Website</title>
 
     <link rel="stylesheet" href="index-styles.css" type="text/css">
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css" type="text/css"> 
+    <link rel="stylesheet" href="pong-styles.css" type="text/css">
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <script src="userInputScript.js" type="text/javascript" defer></script>
     <script src="darkmode.js" type="text/javascript" defer></script>
+    <script type="module" src="pong-script.js" type="text/javascript" defer></script>
     <!-- <script src="test.js" type="text/javascript" defer></script> -->
 </head>
 <body>
@@ -85,7 +87,18 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
+            <section class="container-2">
+                <div id="game-container-2">
+                    <div class="score">
+                        <div id="player-score">0</div>
+                        <div id="computer-score">0</div>
+                    </div>
+                    <div class="ball" id="ball"></div>
+                    <div class="paddle left" id="player-paddle"></div>
+                    <div class="paddle right" id="computer-paddle"></div>
+                </div>  
+            </section>
         </main>
     </div>  
 </body>
