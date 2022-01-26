@@ -1,0 +1,65 @@
+/* Dark Universal Styles 
+========================== */
+#theme.dark {
+    background-color: #000;
+    color: #FFF;
+}
+
+    /* Dark Header Styles */
+
+#theme.dark header {
+    border-bottom: solid 1px #c6c1c1;
+    background-color: #1b1b1b; 
+}
+
+    /* Dark Index Game Styles */
+
+#theme.dark a { 
+    color: #FFF;
+}
+
+#theme.dark .instructions-text {
+    color: #FFF;
+}
+
+#theme.dark .game-header {
+    color:#578CA9;
+}
+
+#theme.dark.button {
+    border-radius: 4px;
+    background-color: #4a4a4a;
+    color: #FFF;
+}
+
+    
+    /* Dark Project Styles  */
+    
+#theme.dark .project-item {
+    background-color: #1f1d1f;
+}
+
+#theme.dark .text-container {
+    color: #b3b9c5;
+    background-color: #1f1d1f;
+}
+  
+
+    /* Dark Blog Styles */
+
+#theme.dark main {
+    background-color: #000;
+}
+
+#theme.dark article {
+    background-color: #272727;
+}
+
+#theme.dark .item-container {
+    color: #b3b9c5;
+}
+
+#theme.dark #searchInput {
+    background-color: #272727;
+    color: #b3b9c5;
+}
