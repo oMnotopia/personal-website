@@ -31,52 +31,6 @@ main {
     color: white;
 }
 
-    /* Header Styles*/
-
-.content a {
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-a {
-    text-decoration: none;
-    color: #4a4a4a
-}
-
-header {
-    width: 100%;
-    border-bottom: solid 1px #c6c1c1;
-    background-color: white;
-}
-    
-header .content {
-    display: flex;
-    align-items: center;
-    padding: 1.875rem;
-}
-    
-header .logo {
-    flex: 1;
-}
-    
-header .siteNav {
-    display: flex;
-}
-    
-nav li {
-    padding-left: 3.5rem;
-    list-style-type: none;
-}
-
-nav a {
-    line-height: 1.6;
-    font-size: 1rem;
-    color: #4a4a4a;
-}
-
-header .icon {
-    width: 3rem;
-}
     
     
     /* Tablet Styling */
@@ -201,87 +155,8 @@ header .icon {
     padding: 0.75rem 1rem;
     margin: 0;
 }
-    
-    /* Theme Toggle Switch Styles */
-    /* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    }
 
-    /* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
 
-    /* The slider */
-#slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #000;
-    transition: .4s;
-}
-
-/* Generates square that slides */
-#slider::before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #578CA9;
-    transition: .4s;
-}
-
-input:checked + #slider {
-    background-color: #FFF;
-}
-
-input:focus + #slider {
-    box-shadow: 0 0 1px #000000;
-}
-
-input:checked + #slider::before {
-    transform: translateX(26px);
-}
-
-    /* Dark Universal Styles */
-
-#theme.dark {
-    color: #4a4a4a;
-    background-color: #000;
-}
-    
-    /* Dark Header Styles */
-    
-#theme.dark header {
-    border-bottom: solid 1px #c6c1c1;
-    background-color: #1b1b1b; 
-}
-
-#theme.dark a {
-    color: #FFF;
-}
-
-    /* Dark Project Styles  */
-
-#theme.dark .project-item {
-    background-color: #1f1d1f;
-}
-
-#theme.dark .text-container {
-    color: #b3b9c5;
-    background-color: #1f1d1f;
-}
 
 
     

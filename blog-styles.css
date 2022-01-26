@@ -4,6 +4,7 @@ html {
     font-family: 'PT Sans';
     font-size: 16px;
     height: 100%;
+    margin:0;
 }
 
 body {
@@ -34,50 +35,6 @@ article:hover {
     border-radius: 4px;
     background-color: #4a4a4a;
     color: white;
-}
-
-
-    /* Header Styles */
-
-
-.content a {
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-header {
-    width: 100%;
-    border-bottom: solid 1px #c6c1c1;
-    background-color: white;
-}
-  
-header .content {
-    display: flex;
-    align-items: center;
-    padding: 1.875rem;
-}
-  
-header .logo {
-    flex: 1;
-}
-  
-header .siteNav {
-    display: flex;
-}
-  
-nav li {
-    padding-left: 3.5rem;
-    list-style-type: none;
-}
-
-nav a {
-    line-height: 1.6;
-    font-size: 1rem;
-    color: #4a4a4a;
-}
-
-header .icon {
-    width: 3rem;
 }
 
     /* Tablet Styling */
@@ -276,41 +233,4 @@ input:checked + #slider::before {
     transform: translateX(26px);
 }
 
-    /* Dark Universal Styles */
 
-#theme.dark {
-    color: #4a4a4a;
-    background-color: #000;
-}
-
-    /* Dark Header Styles */
-
-#theme.dark header {
-    border-bottom: solid 1px #c6c1c1;
-    background-color: #1b1b1b; 
-}
-
-#theme.dark a {
-    color: #FFF;
-}
-
-  /* Dark Main Styles */
-
-#theme.dark main {
-    background-color: #000;
-}
-
-#theme.dark article {
-    background-color: #272727;
-}
-
-
-
-#theme.dark .item-container {
-    color: #b3b9c5;
-}
-
-#theme.dark #searchInput {
-    background-color: #272727;
-    color: #b3b9c5;
-}
