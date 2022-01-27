@@ -88,7 +88,6 @@ main {
     }
 
 }
-
     
     /* Body Styles */
     /* Body Styles - Projects */
@@ -104,6 +103,11 @@ main {
     gap: 2rem;
     margin: auto;
     width: 60%;    
+}
+
+#projects a {
+    text-decoration: none;
+    color: #000
 }
 
 .project-item { 

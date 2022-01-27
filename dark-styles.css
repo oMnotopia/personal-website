@@ -1,5 +1,9 @@
 /* Dark Universal Styles 
 ========================== */
+html #theme.dark  {
+    background-color: #000
+}
+
 #theme.dark {
     background-color: #000;
     color: #FFF;

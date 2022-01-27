@@ -19,7 +19,7 @@ export default class Paddle {
     }
 
     reset() {
-        this.position = 50;
+        this.position = (85.5/2);
     }
 
     update(delta, ballHeight) {

@@ -1,0 +1,94 @@
+.game-header {
+    color: #578CA9;
+    margin: 0;
+}
+
+.title-row {
+    margin-top: 2.635rem;
+    margin-bottom: 1.3125rem;
+}
+
+.instructions-title {
+    display: inline;
+    font-size: 1.125rem;
+}
+
+.instructions-row {
+    margin: auto;
+}
+
+.instructions-row-pong {
+    margin: auto;
+}
+
+.instructions-row td {
+    text-align: left;
+}
+
+.instructions-number {
+    padding-right: 1.5625rem;
+    font-size: 2.25rem;
+}
+
+.instructions-text {
+    padding: .625rem;
+    font-size: .875rem;
+    color: rgba(0, 0, 0, 1);;
+}
+
+.door-frame {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.start-row {
+    margin: 1.3125rem auto;
+    width: 7.5rem;
+    height: 3.875rem;
+    background-color: #578CA9;
+    color: #010165;
+    font-size: 1.125rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#score-tracker {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.current-streak > p, .best-streak > p {
+    color: #FFF;
+    font-weight: bold;
+}
+
+.current-streak-box, .best-streak-box {
+    background-color: #259B9A;
+    height: 4.5rem;
+    width: 4.25rem;
+    text-align: center;
+    margin: auto;
+    border-radius: .5rem;
+}
+
+.current-streak-box > p, .best-streak-box > p {
+    color: #000;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#btn {
+    line-height: 1rem;
+    width: 3rem;
+}
+
+.game-container {
+
+    border-bottom: 1px solid #999;
+}

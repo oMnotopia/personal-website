@@ -12,7 +12,7 @@ const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
 
 let lastTime;
-let winCondition = false;
+let winCondition = true;
 
 function update(time) {
     if(lastTime!=null){
@@ -64,7 +64,7 @@ function handleLose() {
 }
 
 gameContainer2.addEventListener('mousemove', e => {
-    playerPaddle.position = ((e.y / window.innerHeight) * 100)-10
+    playerPaddle.position = ((e.y / window.innerHeight) * 100)-11 //needs to be 11 to fit screen (investigate)
 })
 
 //Update Loop

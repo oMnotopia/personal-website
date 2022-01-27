@@ -1,5 +1,5 @@
 
-
+const html = document.getElementsByTagName('html')
 const switchInput = document.getElementById('switch-input')
 
 const theme = document.getElementById('theme')
@@ -37,21 +37,17 @@ const handleMouseLeave = () => {
 const currentTheme = localStorage.getItem("theme")
 const rememberedTheme = localStorage.getItem("sliderChecked")
 
-//If user has dark mode set as preference
-// if(prefersDarkScheme) {
-//     theme.className = "dark";
-//     githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header 
-//     if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
-//     if(yellowC||greenC||pinkC||blueC) darkModeContrastValues()
-// }
-//Remeber status of theme from previous visits then update elements.
+console.log(html[0].style.backgroundColor = '#000')
 
 if (rememberedTheme==='true') {
-    switchInput.checked = true; //Reapplys checked status of slider on page reload
+    switchInput.checked = true; //reapplys checked status of slider on page reload
     theme.className = "dark";
     githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header 
     if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
-    if(yellowC||greenC||pinkC||blueC) darkModeContrastValues()
+    if(yellowC||greenC||pinkC||blueC)  {
+        darkModeContrastValues()
+        html[0].style.backgroundColor = '#000' //ensures entires background is black even during filtering
+    }
 } else {
     theme.className = "light";
     githubLogo[0].src = "./resources/github-logo.png"; //logo in header 
@@ -104,7 +100,7 @@ switchInput.addEventListener('click', () => {
 })
 
 //Event listeners that change contrast ratio values for accessability blog.
-if(accessabillity){
+if(accessabillity && theme.className==='light'){
     accessabillity.addEventListener('mouseenter', handleMouseEnter)
     accessabillity.addEventListener('mouseleave', handleMouseLeave)   
 }

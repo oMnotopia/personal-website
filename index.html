@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oMnotopia's Website</title>
+    <title>Clayton Persinger's Website</title>
 
     <link rel="stylesheet" href="index-styles.css" type="text/css">
     <link rel="stylesheet" href="header-styles.css">
-    <link rel="stylesheet" href="styles.css" type="text/css"> 
+    <link rel="stylesheet" href="choredoor-styles.css" type="text/css"> 
     <link rel="stylesheet" href="pong-styles.css" type="text/css">
     <link rel="stylesheet" href="dark-styles.css">
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
-    <script src="userInputScript.js" type="text/javascript" defer></script>
+    <script src="choredoor-script.js" type="text/javascript" defer></script>
     <script src="darkmode.js" type="text/javascript" defer></script>
     <script type="module" src="pong-script.js" type="text/javascript" defer></script>
-    <!-- <script src="test.js" type="text/javascript" defer></script> -->
+
 </head>
 <body>
     <div id="theme" class="light">
         <header>
             <div class="content">
-                <a href="index.html" class="logo">oMnotopia</a>
+                <a href="index.html" class="logo">Clayton Persinger</a>
                 <a href="blog.html">Blog</a>
                 <a href="projects.html">Projects</a>
                 <a href="#">About Me</a>
@@ -85,7 +85,15 @@
                     </div>
                 </div>
             </div>
-            <section class="container-2">
+
+            <div class="container-2">
+                <h1 class="game-header">Pong</h1>
+                <table class="instructions-row-pong">
+                    <tr>
+                        <td class="instructions-number">1</td>
+                        <td class="instructions-text">Click on the board to start each round!</td>
+                    </tr>
+                </table>
                 <div id="game-container-2">
                     <div class="score">
                         <div id="player-score">0</div>
@@ -95,7 +103,7 @@
                     <div class="paddle left" id="player-paddle"></div>
                     <div class="paddle right" id="computer-paddle"></div>
                 </div>  
-            </section>
+            </div>
         </main>
     </div>  
 </body>

@@ -19,7 +19,7 @@
 }
 
 .paddle {
-    --position: 400px;
+    /* --position: 400px; */
 
     position: absolute;
     background-color: var(--foreground-color);
@@ -38,8 +38,8 @@
 }
 
 .ball{
-    --x: 500px;
-    --y: 400px;
+    /* --x: 100px;
+    --y: 400px; */
 
     position: absolute;
     background-color: var(--foreground-color);
