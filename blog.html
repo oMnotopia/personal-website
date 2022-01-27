@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="blog-styles.css">
     <link rel="stylesheet" href="header-styles.css">
     <link rel="stylesheet" href="dark-styles.css">
+    <link rel="stylesheet" href="blog-media-styles.css">
+
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">  
     
@@ -19,19 +21,23 @@
 </head>
 <body>
     <div id="theme" class="light">
-        <header>
-            <div class="content">
-                <a href="index.html" class="logo">Clayton Persinger</a>
-                <a href="blog.html">Blog</a>
-                <a href="projects.html">Projects</a>
-                <a href="#">About Me</a>
-                <a href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
-                <label class="switch switch-left-right">
-                    <input id="switch-input" type="checkbox" />
-                    <span class="switch-label" data-on="Dark" data-off="Light"></span> 
-                    <span class="switch-handle"></span> 
-                </label>
-            </div>
+        <header class="navigation">
+                    <nav>
+                        <a href="index.html" class="logo">Clayton Persinger</a>
+                    </nav>
+                    <nav class="nav-items">
+                        <a href="blog.html">Blog</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="#">About</a>
+                        <a class="github-logo" href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
+                    </nav>
+                    <nav class="dark-mode-slider">
+                        <label class="switch switch-left-right">
+                            <input id="switch-input" type="checkbox" />
+                            <span class="switch-label" data-on="Dark" data-off="Light"></span> 
+                            <span class="switch-handle"></span> 
+                        </label>
+                    </nav>
         </header>
         <main>
             <div id="search-container">
@@ -60,10 +66,10 @@
                             is a range between 1:1 (white on white) to 21:1 (black on white). For example:
                         </p>
                         <ul>
-                            <li>Yellow (#FFFF00) has a contrast of <b id='yellow'>1.07:1</b>. <span style="color:#FFFF00">This is yellow</span> </li>
-                            <li>Green (#00FF00) has a contrast of <b id='green'>1.37:1</b>. <span style="color:#00FF00">This is green</span> </li>
-                            <li>Pink (#FF80FF) has a contrast of <b id='pink'>2.14:1</b>. <span style="color:#FF80FF">This is pink</span> </li>
-                            <li>Blue (#0000FF) has a contrast of <b id='blue'>8.59:1</b>. <span style="color:#0000FF">This is blue</span> </li>   
+                            <li>Yellow (#FFFF00) has a contrast of <b id='yellow'>1.07:1</b> on this background. <span style="color:#FFFF00">This is yellow</span> </li>
+                            <li>Green (#00FF00) has a contrast of <b id='green'>1.37:1</b> on this background. <span style="color:#00FF00">This is green</span> </li>
+                            <li>Pink (#FF80FF) has a contrast of <b id='pink'>2.14:1</b> on this background. <span style="color:#FF80FF">This is pink</span> </li>
+                            <li>Blue (#0000FF) has a contrast of <b id='blue'>8.59:1</b> on this background. <span style="color:#0000FF">This is blue</span> </li>   
                         </ul>
                         <p>
                             For a contrast ratio to pass the standards set by the WCAG, it must achieve one of two 
@@ -136,7 +142,7 @@
                             programming can effect a users experience on a website using a keyboard, they are:
                                 <ul>
                                     <li>
-                                        Focus Indicators - A user presses the "tab" key to navigate through 
+                                        <b>Focus Indicators</b> - A user presses the "tab" key to navigate through 
                                         a web page - links, buttons, text input fields, etc. When an item on the 
                                         page has been tabbed to, it gains keyboard "focus" and can then be 
                                         manipulated on the keyboard. A user must be provided with a visual 
@@ -148,14 +154,14 @@
                                         other interactive symbols.
                                     </li>
                                     <li>
-                                        Navigation Order - The order in which interactive items receive focus is 
+                                        <b>Navigation Order</b> - The order in which interactive items receive focus is 
                                         important to keyboard users because if it is not it will cause the site to 
                                         be confusing to navigate. This means that the navigation follows the visual 
                                         flow of the page - left to right, top to bottom. In most pages this means
                                         header, main navigation, page navigation, and footer.
                                     </li>
                                     <li>
-                                        Items That Should Not Receive Keyboard Focus - Elements such as links, 
+                                        <b>Items That Should Not Receive Keyboard Focus</b> - Elements such as links, 
                                         buttons, and form controls are natively accessable to keyboard users, so 
                                         they should be used for interactivity whenver possible. Any page elements 
                                         that are not interactive should not be made keyboard focusable, as it will 
@@ -163,13 +169,16 @@
                                         tabIndex="0" is used on a div or some other element that has no 
                                         interactivity.
                                     </li>
-                                    <li>Inaccessible Custom Widgets - When custom widgets are used steps must be 
+                                    <li>
+                                        <b>Inaccessible Custom Widgets</b> - When custom widgets are used steps must be 
                                         taken to make that widget accessable. Setting the attribute tabIndex="0" 
                                         on the correct elements and the use of ARIA for screen readers are the main 
                                         way to do so. The ARIA Authoring Practices outlines keyboard interactions 
                                         and ARIA code for most custom widgets. For a widget to be highly
                                     </li>
-                                    <li>Lengthy Navigation - </li>
+                                    <li>
+                                        <b>Lengthy Navigation</b> - 
+                                    </li>
                                 </ul>
                            
                         </p>

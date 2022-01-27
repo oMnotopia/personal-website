@@ -1,10 +1,16 @@
     /* Universal Styles */
 
+*{
+    margin:0;
+    padding:0;
+} 
+
 html {
     font-family: 'PT Sans';
     font-size: 16px;
     height: 100%;
     margin: 0;
+    width: 100%;
 }
 
 body {
@@ -16,6 +22,26 @@ main {
     text-align: center;
     width: 100%;
     background-color: #578CA9;
+}
+
+ul {
+    padding: 1rem 0;
+    padding-inline-start: 5rem;
+    font-size: 1;
+}
+
+ul > ul {
+    padding: 0.5rem;
+    padding-inline-start: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    margin: 1rem 0;
+    font-size: 1.75rem;
 }
 
 article:hover {
@@ -38,50 +64,9 @@ article:hover {
     color: white;
 }
 
-    /* Tablet Styling */
-    
-    @media only screen and (max-device-width: 768px) {
-        .logo {
-            display: none;
-        }
-    
-        header {
-            display: block;
-            width: 100%;
-        }
-    
-        header .content {
-            padding-left: 0;
-            padding-right: 0; 
-            width: 100%;
-        }
-    
-        nav {
-            width: 100%;
-        }
-    
-    
-        ul {
-            padding: 0;
-            justify-content: space-around;
-        }
-    
-        .content li {
-            padding: 0;
-        }
-    }
-        
-        /* Phone Styling */
-        
-    @media only screen and (max-device-width: 425px) {
-        
-    
-    }
+ /* Body Styles */
 
-
-    /* Body Styles */
-
-#blog-container {
+ #blog-container {
     width: 75%;
     margin: 2rem auto;
 }
@@ -89,7 +74,6 @@ article:hover {
 .blog-item {
     background-color: #FFF;
     border-radius: 0.625rem;
-    /*padding-bottom: 5%;*/
     overflow: hidden;
     margin: 2rem;
 }
@@ -101,7 +85,7 @@ article:hover {
 
 .blog-item p {
     padding: 0 1.5rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-align: start;
 }
 
@@ -121,7 +105,7 @@ article:hover {
 }
 
 .item-container {
-    width: 75%;
+    width: 80%;
     margin: auto;
 }
 
@@ -181,57 +165,5 @@ article li {
     margin: 0.75rem;
 }
 
-/* Theme Toggle Switch Styles */
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: block; /* If this is inline-block like other headers, display spot is wrong*/
-    width: 60px;
-    height: 34px;
-    bottom: 0;
-}
-    
-    /* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-    /* The slider */
-#slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #000;
-    transition: .4s;
-    }
-
-    /* Generates square that slides */
-#slider::before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #578CA9;
-    transition: .4s;
-}
-
-input:checked + #slider {
-    background-color: #FFF;
-}
-
-input:focus + #slider {
-    box-shadow: 0 0 1px #000000;
-}
-
-input:checked + #slider::before {
-    transform: translateX(26px);
-}
 
 
