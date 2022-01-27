@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="projects-styles.css" type="text/css">
     <link rel="stylesheet" href="header-styles.css">
     <link rel="stylesheet" href="dark-styles.css">
+    <link rel="stylesheet" href="projects-media-styles.css">
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
@@ -16,19 +17,23 @@
 </head>
 <body>
     <div id="theme" class="light">
-        <header>
-            <div class="content">
+        <header class="navigation">
+            <nav>
                 <a href="index.html" class="logo">Clayton Persinger</a>
+            </nav>
+            <nav class="nav-items">
                 <a href="blog.html">Blog</a>
                 <a href="projects.html">Projects</a>
-                <a href="#">About Me</a>
-                <a href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
+                <a href="#">About</a>
+                <a class="github-logo" href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
+            </nav>
+            <nav class="dark-mode-slider">
                 <label class="switch switch-left-right">
                     <input id="switch-input" type="checkbox" />
                     <span class="switch-label" data-on="Dark" data-off="Light"></span> 
                     <span class="switch-handle"></span> 
                 </label>
-            </div>
+            </nav>
         </header>
         <main>
             <div class="project-container">
