@@ -37,8 +37,6 @@ const handleMouseLeave = () => {
 const currentTheme = localStorage.getItem("theme")
 const rememberedTheme = localStorage.getItem("sliderChecked")
 
-console.log(html[0].style.backgroundColor = '#000')
-
 if (rememberedTheme==='true') {
     switchInput.checked = true; //reapplys checked status of slider on page reload
     theme.className = "dark";
@@ -55,8 +53,6 @@ if (rememberedTheme==='true') {
     if(yellowC||greenC||pinkC||blueC) handleMouseLeave()
 }
 
-console.log(rememberedTheme)
-console.log(theme.className)
 //Event listener from click. Event handler looks at the class name and changes between dark and light.
 switchInput.addEventListener('click', () => {
 
@@ -92,7 +88,6 @@ switchInput.addEventListener('click', () => {
             accessabillity.addEventListener('mouseleave', handleMouseLeave)    
         }
     }
-    console.log(theme.className)
     //Stores theme in local storage so on a page switch theme is remembered.
     localStorage.setItem("theme", theme.className);
     localStorage.setItem("sliderChecked", switchInput.checked)
