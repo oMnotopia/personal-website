@@ -50,7 +50,11 @@ if (rememberedTheme==='true') {
     theme.className = "light";
     githubLogo[0].src = "./resources/github-logo.png"; //logo in header 
     if(githubLogo[1]) githubLogo[1].src = "./resources/github-logo.png"; // logo in projects section  
-    if(yellowC||greenC||pinkC||blueC) handleMouseLeave()
+    if(yellowC||greenC||pinkC||blueC) {
+        handleMouseLeave()
+        html[0].style.backgroundColor = '#578CA9' //ensures entires background is white even during filtering
+    }
+
 }
 
 //Event listener from click. Event handler looks at the class name and changes between dark and light.
@@ -62,13 +66,13 @@ switchInput.addEventListener('click', () => {
         githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header
         if(githubLogo[1]) githubLogo[1].src = "./resources/github-dark-logo.png"; // logo in projects section
         
+        html[0].style.backgroundColor = '#000' //ensures entires background is black even during filtering
 
         //Remove event listener so contrast values don't change when mouse is over blog item. 
         if(accessabillity) {
             accessabillity.removeEventListener('mouseenter', handleMouseEnter)
             accessabillity.removeEventListener('mouseleave', handleMouseLeave)
         }
-
 
         //Update contrast values for dark mode.
         if(yellowC||greenC||pinkC||blueC) darkModeContrastValues()
@@ -79,14 +83,16 @@ switchInput.addEventListener('click', () => {
         githubLogo[0].src = "./resources/github-logo.png";
         if (githubLogo[1]) githubLogo[1].src = "./resources/github-logo.png";
 
-        //Reset contrast values for light mode.
-        if(yellowC||greenC||pinkC||blueC) handleMouseLeave()
+        html[0].style.backgroundColor = '#578CA9' //ensures entires background is white even during filtering
 
         //Add event listeners so contrast values do change when mouse is over blog item.
         if(accessabillity) {
             accessabillity.addEventListener('mouseenter', handleMouseEnter)
             accessabillity.addEventListener('mouseleave', handleMouseLeave)    
         }
+
+        //Reset contrast values for light mode.
+        if(yellowC||greenC||pinkC||blueC) handleMouseLeave()
     }
     //Stores theme in local storage so on a page switch theme is remembered.
     localStorage.setItem("theme", theme.className);
