@@ -16,6 +16,12 @@ html #theme.dark {
     background-color: #1b1b1b; 
 }
 
+    /* Dark Index Styles */
+
+#theme.dark .about-me-text {
+    text-shadow: 1px 1px 2px #000;
+}
+
     /* Dark Index Game Styles */
 
 #theme.dark a { 

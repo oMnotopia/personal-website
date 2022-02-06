@@ -35,7 +35,6 @@ const handleMouseLeave = () => {
     blueC.innerHTML = "8.59:1"
 }
 
-console.log(birds)
 //Dark updates for Index page 
 const indexDarkUpdates = () => {
     indexBackground.src = "./resources/Mountain.png"
@@ -48,7 +47,7 @@ const indexDarkUpdates = () => {
 const indexLightUpdates = () => {
     //sets html level background as white
     html[0].style.backgroundColor = '#FFF' 
-    indexBackground.src = "./resources/mads-schmidt-rasmussen-6YmzwamGzCg-unsplash-1.jpg"
+    indexBackground.src = "./resources/mads-schmidt-rasmussen-6YmzwamGzCg-unsplash-4.jpg"
     indexBackground.className = "snow-mntn-background"
     birds.forEach(bird => {
         bird.style.backgroundImage = "url('./resources/bird-cells-black.svg')"
