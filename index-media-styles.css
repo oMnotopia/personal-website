@@ -25,17 +25,23 @@
         justify-content: space-evenly;
     }
 
-    #projects {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        margin: auto;
-        width: 80%;    
-    }
-
     .game-container, .container-2 {
         display: none;
+    }
+
+    .about-me-container {
+        display: block;
+    }
+
+    .about-me-text {
+        margin: auto;
+        width:80%;
+        padding: 5rem 0;
+    }
+
+    .wrapper {
+        top: 0;
+
     }
 
 }

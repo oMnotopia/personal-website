@@ -8,19 +8,18 @@
 
     <link rel="stylesheet" href="index-styles.css" type="text/css">
     <link rel="stylesheet" href="header-styles.css">
-    <link rel="stylesheet" href="choredoor-styles.css" type="text/css"> 
-    <link rel="stylesheet" href="pong-styles.css" type="text/css">
+
     <link rel="stylesheet" href="dark-styles.css">
+    <link rel="stylesheet" href="index-bird-styles.css">
     <link rel="stylesheet" href="index-media-styles.css">
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
-    <script src="choredoor-script.js" type="text/javascript" defer></script>
+
     <script src="darkmode.js" type="text/javascript" defer></script>
-    <script type="module" src="pong-script.js" type="text/javascript" defer></script>
 
 </head>
-<body>
+<body id="index">
     <div id="theme" class="light">
         <header class="navigation">
             <nav>
@@ -28,8 +27,8 @@
             </nav>
             <nav class="nav-items">
                 <a href="blog.html">Blog</a>
+                <a href="games.html">Games</a>
                 <a href="projects.html">Projects</a>
-                <a href="#">About</a>
                 <a class="github-logo" href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
             </nav>
             <nav class="dark-mode-slider">
@@ -41,93 +40,35 @@
             </nav>
         </header>
         <main>
-            <section class="about-me-container">
-                <div class="flex-content">
-                    <div>
-                        <h1>Hey, I'm Clayton</h1> <span> </span>
-                        <p>
-                            I'm an aspiring programmer from Vancouver, British Columbia. I love learning new technoligies 
-                            and writing about it in my <b><a href="./blog.html">blog</a></b>. This website is as much a learning tool for me as it is a way 
-                            to show off the things I've learned and <b><a href="./projects.html"> built</a></b>. My main focus recently has been front end 
-                            technologies like JavaScript, React.JS, HTML, and CSS but I want to develop my skills to become 
-                            a full stack developer.
-                        </p>
-                    </div>
-                    <img src="" alt="">
-
-                </div> 
-                
-            </section>
-
-            <div class="game-container">
-                <h1 class="game-header">Chore Door</h1>
-                <table class="instructions-row">
-                    <tr>
-                        <td class="instructions-number">1</td>
-                        <td class="instructions-text">Hiding behind one of these doors is the ChoreBot.</td>
-                    </tr>
-                    <tr>
-                        <td class="instructions-number">2</td>
-                        <td class="instructions-text">Your mission is to open all of the doors without running into the ChoreBot.</td>
-                    </tr>
-                    <tr>
-                        <td class="instructions-number">3</td>
-                        <td class="instructions-text">If you manage to avoid the ChoreBot until you open the very last door, you win!</td>
-                    </tr>
-                    <tr>
-                        <td class="instructions-number">4</td>
-                        <td class="instructions-text">Please enter a number between 2 and 8 to start the game.</td>
-                    </tr>
-                </table>
-            
-                <!--Doors will be added here through JavaScript-->
-                <div id="door-rows" class="door-row"></div>
-            
-                <div id="game-reqs">
-                    <div class="numOfDoorsInput">
-                        <form>
-                            <label for="numOfDoors">Number of Doors:</label>
-                            <input type="text" id="numOfDoors">
-                            <button id="btn" type="submit">Send</button>
-                        </form>
-                    </div>
-                    <div id="start" class="start-row">Good Luck!</div>
-                </div>    
-                <div id="score-tracker" class="score-row">
-                    <div class="current-streak">
-                        <p class="score-title">Current Streak:</p>
-                        <div class="current-streak-box">
-                            <p id="current-score">0</p>
+            <div class="wrapper">
+                <img src="./resources/mads-schmidt-rasmussen-6YmzwamGzCg-unsplash-4.jpg" id="background" class="snow-mntn-background">
+                <section class="about-me-container">
+                        <div class="about-me-text">
+                            <h1 >Hey, I'm <b style="color:#FFCD57">Clayton</b></h1>
+                            <p>
+                                I'm an aspiring programmer from Vancouver, British Columbia. I love learning new technologies 
+                                and writing about it in my <b><a href="./blog.html" style="color:#FFCD57; text-decoration-color:#578CA9; font-size: 1.5rem;">blog</a></b>. This website is as much a learning tool for me as it is a way 
+                                to show off the things I've learned and <b><a href="./projects.html" style="color:#FFCD57; text-decoration-color:#578CA9; font-size: 1.5rem;"> built</a></b>. My main focus recently has been front end 
+                                technologies like JavaScript, React.JS, HTML, and CSS but I want to develop my skills to become 
+                                a full stack developer.
+                            </p>
                         </div>
-                    </div>
-                    <div class="best-streak">   
-                        <p class="score-title">Best Streak:</p>
-                        <div class="best-streak-box">
-                            <p id="best-score">0</p>
-                        </div>
-                    </div>
+                </section>
+                <div class="bird-container bird-container--one">
+                    <div class="bird bird--one"></div>
+                </div>
+                <div class="bird-container bird-container--two">
+                    <div class="bird bird--two"></div>
+                </div>
+                <div class="bird-container bird-container--three">
+                    <div class="bird bird--three"></div>
+                </div>
+                <div class="bird-container bird-container--four">
+                    <div class="bird bird--four"></div>
                 </div>
             </div>
-
-            <div class="container-2">
-                <h1 class="game-header">Pong</h1>
-                <table class="instructions-row-pong">
-                    <tr>
-                        <td class="instructions-number">1</td>
-                        <td class="instructions-text">Click on the board to start each round!</td>
-                    </tr>
-                </table>
-                <div id="game-container-2">
-                    <div class="score">
-                        <div id="player-score">0</div>
-                        <div id="computer-score">0</div>
-                    </div>
-                    <div class="ball" id="ball"></div>
-                    <div class="paddle left" id="player-paddle"></div>
-                    <div class="paddle right" id="computer-paddle"></div>
-                </div>  
-            </div>
         </main>
-    </div>  
+    </div> 
+
 </body>
 </html>
