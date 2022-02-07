@@ -1,6 +1,9 @@
+
+
 .game-header {
-    color: #578CA9;
+    color: #FFF;
     margin: 0;
+    text-align: center;
 }
 
 .title-row {
@@ -32,7 +35,7 @@
 
 .instructions-text {
     padding: .625rem;
-    font-size: .875rem;
+    font-size: 1rem;
     color: rgba(0, 0, 0, 1);;
 }
 
@@ -45,7 +48,7 @@
     margin: 1.3125rem auto;
     width: 7.5rem;
     height: 3.875rem;
-    background-color: #578CA9;
+    background-color: #D54B01;
     color: #010165;
     font-size: 1.125rem;
     cursor: pointer;
@@ -53,6 +56,11 @@
     display:flex;
     justify-content: center;
     align-items: center;
+}
+
+.door-row {
+    display: flex;
+    justify-content: center;
 }
 
 #score-tracker {
@@ -68,7 +76,7 @@
 }
 
 .current-streak-box, .best-streak-box {
-    background-color: #259B9A;
+    background-color: #D54B01;
     height: 4.5rem;
     width: 4.25rem;
     text-align: center;
@@ -91,4 +99,12 @@
 .game-container {
     border-bottom: 1px solid #999;
     margin-top: 2rem;
+}
+
+.numOfDoorsInput {
+    text-align: center;
+}
+
+.game-container h1 {
+    text-align: center;
 }

@@ -8,92 +8,92 @@
 
     <link rel="stylesheet" href="games-styles.css" type="text/css"> 
     <link rel="stylesheet" href="header-styles.css" type="text/css">
-    <link rel="stylesheet" href="dark-styles.css">
-    <link rel="stylesheet" href="pong-styles.css" type="text/css">
+    <link rel="stylesheet" href="dark-styles.css" type="text/css">
     <link rel="stylesheet" href="choredoor-styles.css" type="text/css"> 
+    <link rel="stylesheet" href="games-media-styles.css" type="text/css">
+    <link rel="stylesheet" href="header-media-styles.css" type="text/css">
 
-    <script src="games.js" type="text/javascript" defer></script>
-    <script src="pong-script.js" type="module" defer></script>
-    <script src="choredoor-script.js" type="text/javascript" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="darkmode.js" type="text/javascript" defer></script>
+    <script src="choredoor-script.js" type="text/javascript" defer></script>  
 
 </head>
-<body>
-    <header class="navigation">
-        <nav>
-            <a href="index.html" class="logo">Clayton Persinger</a>
-        </nav>
-        <nav class="nav-items">
-            <a href="blog.html">Blog</a>
-            <a href="games.html">Games</a>
-            <a href="projects.html">Projects</a>
-            <a class="github-logo" href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
-        </nav>
-        <nav class="dark-mode-slider">
-            <label class="switch switch-left-right">
-                <input id="switch-input" type="checkbox" />
-                <span class="switch-label" data-on="Dark" data-off="Light"></span> 
-                <span class="switch-handle"></span> 
-            </label>
-        </nav>
-    </header>
-
-    <div id="btn-container">
-        <button id="CD-btn">Chore Door</button>
-    </div>
-
-    <div id="game-container" class="hidden">
-        <h1 class="game-header">Chore Door</h1>
-        <table class="instructions-row">
-            <tr>
-                <td class="instructions-number">1</td>
-                <td class="instructions-text">Hiding behind one of these doors is the ChoreBot.</td>
-            </tr>
-            <tr>
-                <td class="instructions-number">2</td>
-                <td class="instructions-text">Your mission is to open all of the doors without running into the ChoreBot.</td>
-            </tr>
-            <tr>
-                <td class="instructions-number">3</td>
-                <td class="instructions-text">If you manage to avoid the ChoreBot until you open the very last door, you win!</td>
-            </tr>
-            <tr>
-                <td class="instructions-number">4</td>
-                <td class="instructions-text">Please enter a number between 2 and 8 to start the game.</td>
-            </tr>
-        </table>
-
-         <!-- Doors will be added here through JavaScript  -->
-        <div id="door-rows" class="door-row"></div>
-
-        <div id="game-reqs">
-            <div class="numOfDoorsInput">
-                <form>
-                    <label for="numOfDoors">Number of Doors:</label>
-                    <input type="text" id="numOfDoors" />
-                    <button id="btn" type="submit">Send</button>
-                </form>
+<body id="games">
+    <div id="theme" class="light">
+        <header class="navigation">
+            <nav>
+                <a href="index.html" class="logo">Clayton Persinger</a>
+            </nav>
+            <nav class="nav-items">
+                <a href="blog.html">Blog</a>
+                <a href="games.html">Games</a>
+                <a href="projects.html">Projects</a>
+                <a class="github-logo" href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
+            </nav>
+            <nav class="dark-mode-slider">
+                <label class="switch switch-left-right">
+                    <input id="switch-input" type="checkbox" />
+                    <span class="switch-label" data-on="Dark" data-off="Light"></span> 
+                    <span class="switch-handle"></span> 
+                </label>
+            </nav>
+        </header>
+        <main>
+            <div id="btn-container">
+                <button id="CD-btn">Chore Door</button>
             </div>
-            <div id="start" class="start-row">Good Luck!</div>
-        </div>    
-        <div id="score-tracker" class="score-row">
-            <div class="current-streak">
-                <p class="score-title">Current Streak:</p>
-                <div class="current-streak-box">
-                    <p id="current-score">0</p>
+    
+            <div id="game-container" class="hidden">
+                <h1 class="game-header">Chore Door</h1>
+                <table class="instructions-row">
+                    <tr>
+                        <td class="instructions-number">1</td>
+                        <td class="instructions-text">Hiding behind one of these doors is the ChoreBot.</td>
+                    </tr>
+                    <tr>
+                        <td class="instructions-number">2</td>
+                        <td class="instructions-text">Your mission is to open all of the doors without running into the ChoreBot.</td>
+                    </tr>
+                    <tr>
+                        <td class="instructions-number">3</td>
+                        <td class="instructions-text">If you manage to avoid the ChoreBot until you open the very last door, you win!</td>
+                    </tr>
+                    <tr>
+                        <td class="instructions-number">4</td>
+                        <td class="instructions-text">Please enter a number between 2 and 8 to start the game.</td>
+                    </tr>
+                </table>
+    
+                <!-- Doors will be added here through JavaScript  -->
+                <div id="door-rows" class="door-row"></div>
+    
+                <div id="game-reqs">
+                    <div class="numOfDoorsInput">
+                        <form>
+                            <label for="numOfDoors">Number of Doors:</label>
+                            <input type="text" id="numOfDoors" />
+                            <button id="btn" type="submit">Send</button>
+                        </form>
+                    </div>
+                    <div id="start" class="start-row">Good Luck!</div>
+                </div>    
+                <div id="score-tracker" class="score-row">
+                    <div class="current-streak">
+                        <p class="score-title">Current Streak:</p>
+                        <div class="current-streak-box">
+                            <p id="current-score">0</p>
+                        </div>
+                    </div>
+                    <div class="best-streak">   
+                        <p class="score-title">Best Streak:</p>
+                        <div class="best-streak-box">
+                            <p id="best-score">0</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="best-streak">   
-                <p class="score-title">Best Streak:</p>
-                <div class="best-streak-box">
-                    <p id="best-score">0</p>
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
-
-
-
-
-
 </body>
 </html>

@@ -18,7 +18,10 @@ const pinkC = document.getElementById('pink')
 const blueC = document.getElementById('blue')
 //Projects section
 const projects = document.getElementById('projects')
+//Games section
+const games = document.getElementById('games')
 
+//Stored between pages and visits
 const rememberedTheme = localStorage.getItem("sliderChecked")
 
 //Contrast values for "Accessability" blog.
@@ -84,8 +87,16 @@ const projectsDarkUpdates = () => {
 }
 const projectsLightUpdates = () => {
     //sets html level background as site-blue
-    html[0].style.backgroundColor = '#578CA9' 
+    html[0].style.backgroundColor = '#FFF' 
     githubLogo[1].src = "./resources/github-logo.png";
+}
+
+//Dark updates for Games page 
+const gamesDarkUpdates = () => {
+    
+}
+const gamesLightUpdates = () => {
+
 }
 
 //If a user has previously set a theme, reapply theme.
@@ -117,6 +128,7 @@ switchInput.addEventListener('click', () => {
         if(index) indexDarkUpdates()
         if(blog) blogDarkUpdates()
         if(projects) projectsDarkUpdates()
+        if(games) gamesDarkUpdates()
 
     } else {
         theme.className = 'light';
@@ -127,6 +139,7 @@ switchInput.addEventListener('click', () => {
         if(index) indexLightUpdates()
         if(blog) blogLightUpdates()
         if(projects) projectsLightUpdates()
+        if(games) gamesLightUpdates()
     }
 
     //Stores theme in local storage so on a page switch theme is remembered.

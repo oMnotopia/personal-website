@@ -39,7 +39,7 @@ h3 {
 
 #theme {
     background-color: #FFF;
-    height: 100%;
+    min-height: 100%;
 }
     
 .center {

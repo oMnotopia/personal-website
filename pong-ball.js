@@ -31,7 +31,7 @@ export default class Ball {
     }
 
     reset() {
-        this.x = (107/2); //107 wide
+        this.x = (117.5/2); //107 wide
         this.y = (85.5/2); //85.5 wide
         this.direction = { x: 0 }
         while(
@@ -49,6 +49,7 @@ export default class Ball {
         this.y += this.direction.y * this.velocity * delta;
         this.velocity += VELOCITY_INCREASE * delta
         const rect = this.rect()
+        console.log(this.x, this.y)
         if(rect.bottom >= gameRect.bottom|| rect.top <= gameRect.top) {
             this.direction.y *= -1;
         }

@@ -5,6 +5,8 @@ const currentScore = document.getElementById('current-score')
 const bestScore = document.getElementById('best-score')
 const submitBtn = document.getElementById('btn')
 const doorParentID = document.getElementById('door-rows')
+const choreDoorBtn = document.getElementById('CD-btn')
+const choreDoorContainer = document.getElementById('game-container')
 
 //Vars for image paths
 const botDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/robot.svg'
@@ -87,7 +89,7 @@ const startRound = () => {
     //Getting door image nodes and turning them into an array for manipulation.
     let childOfDoors = doorParentID.childNodes;
     let ChildOfDoorsArray = Array.from(childOfDoors)
-    //Resets doors to blank and reassigns event listeners based off previous number of doors.\
+    //Resets doors to blank and reassigns event listeners based off previous number of doors.
     ChildOfDoorsArray.forEach(element => {
         element.setAttribute("src", closedDoorPath) 
         element.addEventListener('click', () => {
@@ -187,6 +189,10 @@ function howManyDoors(ev) {
 //Event listener 'click', starts/restarts the game.
 startButton.addEventListener('click', () => {
     if(currentlyPlaying===false) startRound();
+})
+
+choreDoorBtn.addEventListener('click', () => {
+    choreDoorContainer.classList.toggle('hidden')
 })
 
 

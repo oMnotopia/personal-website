@@ -25,7 +25,8 @@
         justify-content: space-evenly;
     }
 
-    #projects {
+    #project-container
+    {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -60,7 +61,7 @@
         left: 2.0625rem;
     }
 
-    #projects {
+    #project-container {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr;

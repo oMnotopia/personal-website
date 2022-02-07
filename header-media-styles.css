@@ -1,0 +1,65 @@
+@media only screen and (max-device-width: 768px) {
+
+    header {
+        width: 100%;
+    }
+
+    header a {
+		font-weight: bold;
+        font-size: 1rem;
+    }
+
+	.github-logo img {
+		display: none;
+	}
+
+	.navigation {
+		justify-content: space-between;
+	}
+
+    nav {
+        width: 100%;
+        gap: 1rem;
+		justify-content: space-evenly;
+    }
+
+}
+    
+    /* Phone Styling */
+    
+@media only screen and (max-device-width: 425px) {
+
+	.switch {
+		width: 2.5rem;	
+	}
+
+    .switch-handle {
+        width: 0.5rem;
+    }
+
+	.switch-label:before, .switch-label:after {
+        display: none;
+    }
+
+	.dark-mode-slider{
+		justify-content: end;
+	}
+
+    .flex-content {
+        width: 80%;
+    }
+
+    #switch-input:checked ~ .switch-handle {
+        left: 2.0625rem;
+    }   
+
+    
+}
+
+
+@media only screen and (max-device-width: 320px) {
+
+	.github-logo {
+		display: none;
+	}
+}
