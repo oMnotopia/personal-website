@@ -1,0 +1,6 @@
+1. Pong game fails/breaks when user scrolls while  playing. It breaks the upper and lower 
+bounds of the game.
+
+2. The Chore Door game fails/breaks when a user enters a different number than the number of doors
+that are currently in play and hits enter. This only occurs when the user has already clicked on at 
+least one door.

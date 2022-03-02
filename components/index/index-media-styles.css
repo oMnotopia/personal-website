@@ -1,0 +1,95 @@
+/* Tablet Styling */
+
+@media only screen and (max-device-width: 768px) {
+
+    .game-container, .container-2 {
+        display: none;
+    }
+
+    .about-me-container {
+        display: block;
+    }
+
+    .about-me-text {
+        margin: auto;
+        width:80%;
+        padding: 5rem 0;
+    }
+
+    .wrapper {
+        top: 0;
+    }
+
+    .dark-background {
+        transform: translateZ(-10px) scale(2) translateY(15rem);
+    
+    }
+    
+    .snow-mntn-background {
+        transform: translateZ(-10px) scale(2) translateX(-5rem) translateY(-15rem);
+    }
+
+    .bird-container--one {
+        animation-duration: 10s;
+        animation-delay: 0;
+    }
+    .bird-container--two {
+        animation-duration: 10.4s;
+        animation-delay: 1s;
+    }
+    .bird-container--three {
+        animation-duration: 9.6s;
+        animation-delay: 4;
+    }
+    .bird-container--four {
+        animation-duration: 10.4s;
+        animation-delay: 5s;
+    }
+
+    @keyframes fly-right-one {
+        0% {
+            transform: scale(0.3) translateX(-10vw);
+       }
+        10% {
+            transform: translateY(2vh) translateX(10vw) scale(0.4);
+       }
+        20% {
+            transform: translateY(0vh) translateX(30vw) scale(0.5);
+       }
+        30% {
+            transform: translateY(4vh) translateX(50vw) scale(0.6);
+       }
+        40% {
+            transform: translateY(2vh) translateX(70vw) scale(0.6);
+       }
+        50% {
+            transform: translateY(0vh) translateX(90vw) scale(0.6);
+       }
+        60% {
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+       }
+        100% {
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+       }
+   }
+
+}
+    
+    /* Phone Styling */
+    
+@media only screen and (max-device-width: 425px) {
+    #projects {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: auto;
+        width: 75%;    
+    }
+}
+
+@media only screen and (max-device-width: 320px) {
+
+}
+
+

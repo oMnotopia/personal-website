@@ -7,14 +7,14 @@
     <title>oMno's Blog</title>
 
     <link rel="stylesheet" href="blog-styles.css">
-    <link rel="stylesheet" href="header-styles.css">
-    <link rel="stylesheet" href="dark-styles.css">
+    <link rel="stylesheet" href="../header/header-styles.css">
+    <link rel="stylesheet" href="../darkmode/dark-styles.css">
     <link rel="stylesheet" href="blog-media-styles.css">
 
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">  
     
-    <script src="darkmode.js" type="text/javascript" defer></script>
+    <script src="../darkmode/darkmode.js" type="text/javascript" defer></script>
     <script src="blog-script.js" type="text/javascript" defer></script>
     <script src="blog-searchbar.js" type="text/javascript" defer></script>
 
@@ -23,13 +23,13 @@
     <div id="theme" class="light">
         <header class="navigation">
             <nav>
-                <a href="index.html" class="logo">Clayton Persinger</a>
+                <a href="../index/index.html" class="logo">Clayton Persinger</a>
             </nav>
             <nav class="nav-items">
                 <a href="blog.html">Blog</a>
-                <a href="games.html">Games</a>
-                <a href="projects.html">Projects</a>
-                <a class="github-logo" href="https://github.com/oMnotopia">Github <img class="icon" src="./resources/github-logo.png" alt="github logo"></a>
+                <a href="../games/games.html">Games</a>
+                <a href="../projects/projects.html">Projects</a>
+                <a class="github-logo" href="https://github.com/oMnotopia">Github <img class="icon" src="../../resources/github-logo.png" alt="github logo"></a>
             </nav>
             <nav class="dark-mode-slider">
                 <label class="switch switch-left-right">
@@ -47,20 +47,19 @@
 
                 <article id="accessabillity" class="blog-item collapsible" attr-small='96px' style='height:96px;'>
                     <div class="item-container">
-                        <h2>Accessabillity "a11y"</h2>
-                        <p>Accessability can be best learned by studying the Web Content Accessability Guidelines 
-                            (WCAG). The WCAG is developed by W3C in cooperation with individuals and organizations, 
-                            with the goal of providing a single shared standard for web content accessability that 
-                            meets the needs of individuals, organizations, and governments internationally. 
-                            WCAG 2 has gone through two current iterations and is set to have the third edition released in 
-                            2021, although that looks like it will be pushed to 2022. Each iteration builds 
-                            upon the previous and no part changes or replaces and of the previous versions.
-                            Accessability allows for everyone to be able to use a website and there are many ways developers 
-                            can make a website accessable. 
+                        <h2>Accessibillity "a11y"</h2>
+                        <p>
+                            Accessibility can be best learned by studying the Web Content Accessibility Guidelines (WCAG). The WCAG is 
+                            developed by W3C in cooperation with individuals and organizations, with the goal of providing a single shared 
+                            standard for web content accessibility that meets the needs of individuals, organizations, and governments 
+                            internationally. WCAG 2 has gone through two current iterations and is set to have the third edition released 
+                            in 2021, although that looks like it will be pushed to 2022. Each iteration builds upon the previous and no 
+                            part changes or replaces and of the previous versions. Accessibility allows for everyone to be able to use a 
+                            website and there are many ways developers can make a website accessible. 
                         </p>    
                         <h3>Contrast & Colours</h3>   
                         <p>
-                            First I will talk about contrast and colours. Users with 
+                            First, I will talk about contrast and colours. Users with 
                             visual disabilities, must be able to perceive the content on a web page, and the 
                             contrast defines how easily it is to tell one colour from another. The contrast ratio 
                             is a range between 1:1 (white on white) to 21:1 (black on white). For example:
@@ -103,8 +102,9 @@
                             <li>Large text which is text 18pt and above or 14pt bold and above.</li>
                             <li>Incidental text, which has four criteria:</li>
                             <ul>
-                                <li><b>Inactive</b>: An inactive element, like a disabled submit button, which is indicated 
+                                <li><b>Inactive</b>: An inactive element, a disabled submit button, which is indicated 
                                     by its lower contrast state.
+
                                 </li>
                                 <li><b>Pure Decoration</b>: Decorative text that is not meant to be read by a user.</li>
                                 <li><b>Not Visible to Anyone</b>: Text that is meant to be hidden, such as an invisible 
@@ -116,8 +116,9 @@
                                 </li>
                             </ul>
                         </ul>
-                        <p>As of WCAG 2.1, contrast requirements have moved beyond text. It now also applies to two 
-                            more components the page. The first is the <b>User Interface Components</b> and the 
+                        <p>
+                            As of WCAG 2.1, contrast requirements have moved beyond text. It now also applies to two 
+                            more components on a page. The first is the <b>User Interface Components</b> and the 
                             visual information associated with them. The second is <b>Graphical Objects</b> and 
                             parts of graphics required to understand the content.
                         </p>
@@ -125,12 +126,12 @@
                             Finally, WCAG 2 does not prohibit the use of any colour or combination of colours. 
                             But as defined in 1.4.1, a level A requirement prohibits colour alone from being 
                             used to present meaningful content or instructions. A common example of this is in 
-                            a sign up form, where a field is missed it usually highlihts in red. Highlighting 
+                            a sign-up form, where a field is missed it usually highlights in red. Highlighting 
                             the missing field in red with no other indication would not pass the requirement.
                             Using the red highlight plus an indicator such as text below each missing field, 
-                            noting is has been missed would be suficient. An example of where problems can arise 
-                            is when two seperate columns are indicated only by differing colours, those 
-                            colours may appear to be the same to someone with visual disabilities. So an indicator 
+                            noting is has been missed would be sufficient. An example of where problems can arise 
+                            is when two separate columns are indicated only by differing colours, those 
+                            colours may appear to be the same to someone with visual disabilities. So, an indicator 
                             such as a text header for each column would be necessary to pass A level requirements.
                         </p>
 
@@ -138,62 +139,125 @@
                         <p>
                             The use of a keyboard to interact with a webpage is done for many reasons. 
                             Some users with motor disabilities or blindness need it, but others use it 
-                            just out of personal preferance. There are a few main ways that bad practices in 
-                            programming can effect a users experience on a website using a keyboard, they are:
-                                <ul>
-                                    <li>
-                                        <b>Focus Indicators</b> - A user presses the "tab" key to navigate through 
-                                        a web page - links, buttons, text input fields, etc. When an item on the 
-                                        page has been tabbed to, it gains keyboard "focus" and can then be 
-                                        manipulated on the keyboard. A user must be provided with a visual 
-                                        indicator of the element that currently has the keyboard focus. All current 
-                                        web browsers automatically provide visual indicators. The appearance 
-                                        changes from browser to browser but is usually indicated by highlighting 
-                                        of the element. To ensure proper visibility more than just highlighting 
-                                        should be done, things like proper contrast, background colours, and 
-                                        other interactive symbols.
-                                    </li>
-                                    <li>
-                                        <b>Navigation Order</b> - The order in which interactive items receive focus is 
-                                        important to keyboard users because if it is not it will cause the site to 
-                                        be confusing to navigate. This means that the navigation follows the visual 
-                                        flow of the page - left to right, top to bottom. In most pages this means
-                                        header, main navigation, page navigation, and footer.
-                                    </li>
-                                    <li>
-                                        <b>Items That Should Not Receive Keyboard Focus</b> - Elements such as links, 
-                                        buttons, and form controls are natively accessable to keyboard users, so 
-                                        they should be used for interactivity whenver possible. Any page elements 
-                                        that are not interactive should not be made keyboard focusable, as it will 
-                                        cause confusion. One instance of this arises when the attribute 
-                                        tabIndex="0" is used on a div or some other element that has no 
-                                        interactivity.
-                                    </li>
-                                    <li>
-                                        <b>Inaccessible Custom Widgets</b> - When custom widgets are used steps must be 
-                                        taken to make that widget accessable. Setting the attribute tabIndex="0" 
-                                        on the correct elements and the use of ARIA for screen readers are the main 
-                                        way to do so. The ARIA Authoring Practices outlines keyboard interactions 
-                                        and ARIA code for most custom widgets. For a widget to be highly
-                                    </li>
-                                    <li>
-                                        <b>Lengthy Navigation</b> - Users with visual impairments and others disabilities 
-                                        must <i>tab</i> or other navigation keys to move through interactive elements on 
-                                        a website. If the item they want to interact with is far down the website it can 
-                                        take a lot of unnecessary clicks and time to get there. This can be particulary 
-                                        demanding on users with motor disabilities. The following best practices can help 
-                                        facilitate efficient keyboard navigation.
-                                        <ul>
-                                            <li>Provide a "skip to main content" link on the page</li>
-                                            <li>Use a proper heading structure.</li>
-                                            <li>Provide regions or Aria landmarks (&lt;main&gt;,&lt;nav&gt;, etc).</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                           
+                            just out of personal preference. There are a few main ways that bad practices in 
+                            programming can affect a users experience on a website using a keyboard, they are:
+                            <ul>
+                                <li>
+                                    <b>Focus Indicators</b> - A user presses the "tab" key to navigate through 
+                                    a web page - links, buttons, text input fields, etc. When an item on the 
+                                    page has been tabbed to, it gains keyboard "focus" and can then be 
+                                    manipulated on the keyboard. A user must be provided with a visual 
+                                    indicator of the element that currently has the keyboard focus. All current 
+                                    web browsers automatically provide visual indicators. The appearance 
+                                    changes from browser to browser but is usually indicated by highlighting 
+                                    of the element. To ensure proper visibility more than just highlighting 
+                                    should be done, things like proper contrast, background colours, and 
+                                    other interactive symbols.
+                                </li>
+                                <li>
+                                    <b>Navigation Order</b> - The order in which interactive items receive focus is 
+                                    important to keyboard users because if it is not, it will cause the site to 
+                                    be confusing to navigate. This means that the navigation follows the visual 
+                                    flow of the page - left to right, top to bottom. In most pages this means
+                                    header, main navigation, page navigation, and footer.
+                                </li>
+                                <li>
+                                    <b>Items That Should Not Receive Keyboard Focus</b> - Elements such as links, 
+                                    buttons, and form controls are natively accessible to keyboard users, so 
+                                    they should be used for interactivity whenever possible. Any page elements 
+                                    that are not interactive should not be made keyboard focusable, as it will 
+                                    cause confusion. One instance of this arises when the attribute 
+                                    tabIndex="0" is used on a div or some other element that has no 
+                                    interactivity.
+                                </li>
+                                <li>
+                                    <b>Inaccessible Custom Widgets</b> - When custom widgets are used steps must be 
+                                    taken to make that widget accessible. Setting the attribute tabIndex="0" 
+                                    on the correct elements and the use of ARIA for screen readers are the main 
+                                    way to do so. The ARIA Authoring Practices outlines keyboard interactions 
+                                    and ARIA code for most custom widgets. For a widget to be highly
+                                </li>
+                                <li>
+                                    <b>Lengthy Navigation</b> - Users with visual impairments and other disabilities 
+                                    must <i>tab</i> or other navigation keys to move through interactive elements on 
+                                    a website. If the item they want to interact with is far down the website, it can 
+                                    take a lot of unnecessary clicks and time to get there. This can be particularly 
+                                    demanding on users with motor disabilities. The following best practices can help 
+                                    facilitate efficient keyboard navigation.
+                                    <ul>
+                                        <li>Provide a "skip to main content" link on the page</li>
+                                        <li>Use a proper heading structure.</li>
+                                        <li>Provide regions or Aria landmarks (&lt;main&gt;,&lt;nav&gt;, etc).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        
                         </p>
                         <h3>Using labels</h3>
+                        <p>
+                            WCAG requires that interactive elements have a label and a name, but the way WCAG defines these 
+                            terms are not the way they are commonly used by developers. According to WCAG a label is: 
+                        </p>
+                        <blockquote>
+                            "text or other component with a text alternative that is presented to a user to identify a component within Web content."
+                        </blockquote>
+                        <p>
+                            it defines name as:
+                        </p>
+                        <blockquote>
+                            "text by which software can identify a component within Web content to the user"
+                        </blockquote>
+                        <p>
+                            The difference in these definitions is that label is presented to the user (visually) and name is presented 
+                            to the software (assistive technologies). This means that in most instances the label and name should be 
+                            the same. However, there are situations where that is not the case. For example, if a website has a search 
+                            bar where the user enters a search. The visible label may be "Search", but the accessible name may be 
+                            "Search for a value". One issue with have differing labels and names is that users of speech recognition 
+                            applications will have a tougher time navigating the site because they will see "Search" but to interact 
+                            will need to use "Search for a value". This is also true for people who use screen readers, as the device 
+                            will read the label, but interaction will be through the name. In cases were there is an image with visible 
+                            text associated to it that is directing a user, or other user interface components, the name must contain 
+                            the label. This was added in WCAG 2.1, and simply means the same as above that when there is a label 
+                            presented to the user, the name should be the same, but if it isn't the name must contain the label. 
+                            WCAG refers to this as "Label in Name" and can be read about in success criterion 2.5.3.
+                            
+                        </p>
+                        <p>
+                            In cases were there is an image with visible text associated to it that is directing a user, or other user 
+                            interface components, the name must contain the label. This was added in WCAG 2.1, and simply means the same as 
+                            above that when there is a label presented to the user, the name should be the same, but if it isn't the name 
+                            must contain the label. WCAG refers to this as "Label in Name" and can be read about in success criterion 2.5.3.
+                        </p>
+
+                        <h4>Accessible Name Computation</h4>
+                        <p>
+                            An interactive element can only present a single string as an accessible name, but there can be several places 
+                            that name is coming from, &lt;label&gt;, title attribute, placeholder attribute, aria-label, and aria-labelledby. 
+                            If aria tags are not being used the order of hierarchy is label, title, placeholder. If aria is being used they 
+                            always go to the top of the order with aria-labelledby overriding aria-label. A older misconception that lingers 
+                            is that aria labels are appended to other names provided, this is not the case.
+                        </p>
+
                         <h3>Alt Tags</h3>
+
+                        <p>
+                            Alternative tags and text serve several purposes:
+                            <ul>
+                                <li>
+                                    Search engines use alternative text and factor it into their assessments of a pages 
+                                    content and purpose.
+                                </li>
+                                <li>
+                                    If in an image fails to load or the image is blocked, the alternative text will be 
+                                    presented instead.
+                                </li>
+                                <li>
+                                    Screen readers announce alternative text when they get to non-text content, helping users 
+                                    navigate and perceive the content.
+                                </li>
+                            </ul>
+                        </p>
+
                         <h3>Developed Correctly - Markups(semantic html, other), Keyboard Navigation</h3>
                         <h3>ARIA</h3>
                     </div>

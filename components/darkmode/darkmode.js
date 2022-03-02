@@ -40,20 +40,20 @@ const handleMouseLeave = () => {
 
 //Dark updates for Index page 
 const indexDarkUpdates = () => {
-    indexBackground.src = "./resources/Mountain.png"
+    indexBackground.src = "../../resources/Mountain.png"
     indexBackground.className = "mntn-background"
     //birds.style.backgroundImage = "url('./resources/bird-cells-white.svg')"
     birds.forEach(bird => {
-        bird.style.backgroundImage = "url('./resources/bird-cells-white.svg')"
+        bird.style.backgroundImage = "url('../../resources/bird-cells-white.svg')"
     })
 }
 const indexLightUpdates = () => {
     //sets html level background as white
     html[0].style.backgroundColor = '#FFF' 
-    indexBackground.src = "./resources/mads-schmidt-rasmussen-6YmzwamGzCg-unsplash-4.jpg"
+    indexBackground.src = "../../resources/Trees.jpg"
     indexBackground.className = "snow-mntn-background"
     birds.forEach(bird => {
-        bird.style.backgroundImage = "url('./resources/bird-cells-black.svg')"
+        bird.style.backgroundImage = "url('../../resources/bird-cells-black.svg')"
     })
 }
 
@@ -88,7 +88,7 @@ const projectsDarkUpdates = () => {
 const projectsLightUpdates = () => {
     //sets html level background as site-blue
     html[0].style.backgroundColor = '#FFF' 
-    githubLogo[1].src = "./resources/github-logo.png";
+    githubLogo[1].src = "../../resources/github-logo.png";
 }
 
 //Dark updates for Games page 
@@ -103,14 +103,14 @@ const gamesLightUpdates = () => {
 if (rememberedTheme==='true') {
     switchInput.checked = true; //reapplys checked status of slider on page reload
     theme.className = "dark";
-    githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header 
+    githubLogo[0].src = "../../resources/github-dark-logo.png"; //logo in header 
     html[0].style.backgroundColor = '#000'
     if(index) indexDarkUpdates()
     if(blog) blogDarkUpdates()
     if(projects) projectsDarkUpdates()
 } else {
     theme.className = "light";
-    githubLogo[0].src = "./resources/github-logo.png"; //logo in header 
+    githubLogo[0].src = "../../resources/github-logo.png"; //logo in header 
     if(index) indexLightUpdates()
     if(blog) blogLightUpdates()
     if(projects) projectsLightUpdates()
@@ -122,7 +122,7 @@ switchInput.addEventListener('click', () => {
     if(theme.className==='light'){
         theme.className = 'dark';
 
-        githubLogo[0].src = "./resources/github-dark-logo.png"; //logo in header
+        githubLogo[0].src = "../../resources/github-dark-logo.png"; //logo in header
         html[0].style.backgroundColor = '#000'
 
         if(index) indexDarkUpdates()
@@ -133,7 +133,7 @@ switchInput.addEventListener('click', () => {
     } else {
         theme.className = 'light';
 
-        githubLogo[0].src = "./resources/github-logo.png";
+        githubLogo[0].src = "../../resources/github-logo.png";
         html[0].style.backgroundColor = '#578CA9'
 
         if(index) indexLightUpdates()

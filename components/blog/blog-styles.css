@@ -24,7 +24,7 @@ main {
     background-color: #578CA9;
 }
 
-ul {
+ul, blockquote {
     padding: 1rem 0;
     padding-inline-start: 5rem;
     font-size: 1;
@@ -42,6 +42,16 @@ h2 {
 h3 {
     margin: 1rem 0;
     font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    text-align: start;
+    padding: 1rem 4rem;
+}
+
+blockquote {
+    text-align: start;
 }
 
 article:hover {
@@ -71,6 +81,12 @@ article:hover {
     margin: 2rem auto;
 }
 
+.item-container > p {
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    text-align: start;
+}
+
 .blog-item {
     background-color: #FFF;
     border-radius: 0.625rem;
@@ -81,12 +97,6 @@ article:hover {
 .blog-item-container {
     width: 85%;
     margin: auto;
-}
-
-.blog-item p {
-    padding: 0 1.5rem;
-    font-size: 1rem;
-    text-align: start;
 }
 
 .blog-item h2 , .blog-item h3{
